@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://uziel44.github.io/nube/sitemap.xml
+Sitemap: https://verdeaguabebes.plexi.com.ar/sitemap.xml
