@@ -1,5 +1,5 @@
 /* ==========================================================================
-   NUBE · ROPA DE BEBÉ Y NIÑOS
+   VERDEAGUA BEBÉS · ROPA DE BEBÉ Y NIÑOS
    Hoja de estilos única.
 
    ORGANIZACIÓN DEL ARCHIVO
@@ -700,6 +700,8 @@ button { font-family: inherit; }
   font-size: .86rem;
 }
 .footer__base p { margin: 0; }
+.footer__base a { text-decoration: underline; text-underline-offset: 3px; }
+.footer__base a:hover { color: var(--menta); }
 
 .wa {
   position: fixed;

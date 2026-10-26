@@ -1,5 +1,5 @@
 /* ==========================================================================
-   NUBE · ROPA DE BEBÉ Y NIÑOS
+   VERDEAGUA BEBÉS · ROPA DE BEBÉ Y NIÑOS
    Único archivo de JavaScript.
 
    QUÉ HACE ESTE ARCHIVO
