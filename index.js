@@ -8,6 +8,9 @@
    3. Abre y cierra los paneles de preguntas frecuentes
    4. Marca el header cuando bajás en la página
    5. Escribe el año actual en el footer
+   6. Datos de contacto en un solo lugar (WhatsApp e Instagram)
+   7. Ventana de detalle al tocar una prenda
+   8. Aparición suave al hacer scroll y botón de WhatsApp que se esconde en el footer
 
    No hay código dentro del HTML: todo el comportamiento vive acá.
    La plantilla original usaba onclick="menuToggle()" pegado en la etiqueta
@@ -18,17 +21,50 @@
 (function () {
   "use strict";
 
+  // ---- Configuración: cambiá estos datos y se actualiza toda la web ----
+  const WHATSAPP = "5493512345678";   // 54 9 + área + número, sin "+" ni espacios
+  const INSTAGRAM = "nube.bebes";     // usuario, sin "@"
+  // -----------------------------------------------------------------------
+
+  const waLink = function (texto) {
+    return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto);
+  };
+
+  // Todo enlace con data-wa="mensaje" o data-wa-product="Nombre de la prenda"
+  // se arma acá: el número vive en una sola línea, no repetido en el HTML.
+  document.querySelectorAll("[data-wa]").forEach(function (a) {
+    a.href = waLink(a.dataset.wa);
+  });
+  document.querySelectorAll("[data-wa-product]").forEach(function (a) {
+    const precio = a.dataset.price ? " (" + a.dataset.price + ")" : "";
+    a.href = waLink("Hola! Quiero pedir el " + a.dataset.waProduct + precio + ". ¿Qué talles hay?");
+  });
+  document.querySelectorAll("[data-instagram]").forEach(function (a) {
+    a.href = "https://www.instagram.com/" + INSTAGRAM + "/";
+    a.textContent = "@" + INSTAGRAM;
+  });
+
 
   /* ------------------------------------------------------------------------
      1. MENÚ MÓVIL
      ------------------------------------------------------------------------ */
   const burger = document.getElementById("burger");
   const nav = document.getElementById("navMenu");
+  const backdrop = document.getElementById("backdrop");
+  const fuera = [document.getElementById("main"), document.querySelector(".site-footer"), document.getElementById("waFloat")];
 
   if (burger && nav) {
 
     const setMenu = function (open) {
       nav.classList.toggle("is-open", open);
+      if (backdrop) backdrop.classList.toggle("is-open", open);
+      document.body.classList.toggle("nav-open", open);
+      // Con el menú abierto el resto de la página no recibe foco ni clics
+      if (window.innerWidth <= 860) {
+        fuera.forEach(function (el) {
+          if (el) { if (open) el.setAttribute("inert", ""); else el.removeAttribute("inert"); }
+        });
+      }
       burger.setAttribute("aria-expanded", String(open));
       burger.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
     };
@@ -37,6 +73,8 @@
       const isOpen = burger.getAttribute("aria-expanded") === "true";
       setMenu(!isOpen);
     });
+
+    if (backdrop) backdrop.addEventListener("click", function () { setMenu(false); });
 
     nav.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () { setMenu(false); });
@@ -163,5 +201,84 @@
      ------------------------------------------------------------------------ */
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
+
+  /* ------------------------------------------------------------------------
+     7. VENTANA DE DETALLE
+     Al tocar la foto de una prenda se abre un <dialog> con la foto grande,
+     la descripción, los talles, el precio y el botón de pedido. Todo se lee
+     de la tarjeta, así que al agregar una prenda no hay nada más que cargar.
+     El botón "Pedir por WhatsApp" de la tarjeta sigue yendo directo al chat.
+     ------------------------------------------------------------------------ */
+  const detalle = document.getElementById("detail");
+
+  if (detalle && contenedorCards && typeof detalle.showModal === "function") {
+    const dImg = detalle.querySelector(".detail__img");
+    const dTag = detalle.querySelector(".detail__tag");
+    const dTitle = detalle.querySelector(".detail__title");
+    const dDesc = detalle.querySelector(".detail__desc");
+    const dTalles = detalle.querySelector(".detail__talles");
+    const dPrice = detalle.querySelector(".detail__price");
+    const dOrder = detalle.querySelector(".detail__order");
+
+    contenedorCards.addEventListener("click", function (e) {
+      const card = e.target.closest(".card");
+      if (!card || e.target.closest("a")) return;
+
+      const img = card.querySelector(".card__media img");
+      const tag = card.querySelector(".card__tag");
+      const talles = card.querySelector(".talles");
+      const pedir = card.querySelector("[data-wa-product]");
+
+      dImg.src = img.currentSrc || img.src;
+      dImg.alt = img.alt;
+      dTag.textContent = tag ? tag.textContent : "";
+      dTag.hidden = !tag;
+      dTitle.textContent = card.querySelector(".card__name").textContent;
+      dDesc.textContent = card.querySelector(".card__desc").textContent;
+      dTalles.innerHTML = talles ? talles.innerHTML : "";
+      dPrice.textContent = card.querySelector(".card__price").textContent;
+      dOrder.href = pedir.href;
+
+      document.body.classList.add("modal-open");
+      detalle.showModal();
+      detalle.scrollTop = 0;
+    });
+
+    detalle.querySelector(".detail__close").addEventListener("click", function () { detalle.close(); });
+    detalle.addEventListener("click", function (e) { if (e.target === detalle) detalle.close(); });
+    detalle.addEventListener("close", function () { document.body.classList.remove("modal-open"); });
+  }
+
+
+  /* ------------------------------------------------------------------------
+     8. APARICIÓN SUAVE Y BOTÓN FLOTANTE
+     Las secciones con clase .reveal aparecen al entrar en pantalla (si el
+     visitante pidió menos movimiento, se ven directo). El botón de WhatsApp
+     se esconde cuando se ve el footer, que ya tiene sus propios enlaces.
+     ------------------------------------------------------------------------ */
+  const reveals = document.querySelectorAll(".reveal");
+  const sinMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if ("IntersectionObserver" in window && !sinMovimiento) {
+    const io = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (entrada) {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("is-visible");
+          io.unobserve(entrada.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("is-visible"); });
+  }
+
+  const waFloat = document.getElementById("waFloat");
+  const footer = document.querySelector(".site-footer");
+  if (waFloat && footer && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (e) {
+      waFloat.classList.toggle("is-hidden", e[0].isIntersecting);
+    }).observe(footer);
+  }
 
 })();

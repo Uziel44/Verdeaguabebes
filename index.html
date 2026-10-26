@@ -20,9 +20,11 @@
 <meta property="og:url" content="https://uziel44.github.io/nube/">
 <meta property="og:image" content="https://uziel44.github.io/nube/img/share-preview.jpg">
 <meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Nube">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="img/favicon.png" type="image/png">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://uziel44.github.io/nube/">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,6 +32,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="index.css">
+<script>document.documentElement.classList.add("js");</script>
 </head>
 
 <body>
@@ -53,7 +56,7 @@
       <a class="nav__link" href="#nosotros">Nosotros</a>
       <a class="nav__link" href="#preguntas">Preguntas</a>
       <!-- COMENTARIO REEMPLAZO: número de WhatsApp. Formato 54 9 + área + número, sin espacios. -->
-      <a class="btn btn--verde nav__cta" href="https://wa.me/5493512345678?text=Hola!%20Quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Hacer un pedido</a>
+      <a class="btn btn--verde nav__cta" href="#" data-wa="Hola! Quiero hacer un pedido" target="_blank" rel="noopener">Hacer un pedido</a>
     </nav>
 
     <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
@@ -99,7 +102,7 @@
      FRANJA DE BENEFICIOS
      ========================================================================== -->
 <section class="benes">
-  <div class="wrap benes__grid">
+  <div class="wrap benes__grid reveal">
     <div class="bene">
       <span class="bene__icon bene__icon--verde" aria-hidden="true"></span>
       <h3>Algodón de verdad</h3>
@@ -127,7 +130,7 @@
 <section class="productos" id="productos">
   <div class="wrap">
 
-    <div class="section-head">
+    <div class="section-head reveal">
       <h2 class="h2">Nuestras prendas</h2>
       <p class="section-head__text">Todos los conjuntos vienen completos, remera y pantalón.</p>
     </div>
@@ -142,7 +145,10 @@
 
       <article class="card" data-cat="abrigo">
         <div class="card__media">
-          <img src="img/conjunto-rosas.jpg" alt="Conjunto de frisa rosa con estampa de rosas" width="800" height="800" loading="lazy">
+          <button class="card__zoom" type="button" data-detail>
+            <img src="img/conjunto-rosas.jpg" alt="Conjunto de frisa rosa con estampa de rosas" width="800" height="800" loading="lazy">
+            <span class="visually-hidden">Ver detalle</span>
+          </button>
           <span class="card__tag">Frisa</span>
         </div>
         <div class="card__body">
@@ -153,13 +159,16 @@
           </ul>
           <!-- COMENTARIO REEMPLAZO: precio -->
           <p class="card__price">$24.900</p>
-          <a class="btn btn--verde btn--block" href="https://wa.me/5493512345678?text=Hola!%20Quiero%20pedir%20el%20Conjunto%20Rosas.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+          <a class="btn btn--verde btn--block" href="#" data-wa-product="Conjunto Rosas" data-price="$24.900" target="_blank" rel="noopener">Pedir por WhatsApp</a>
         </div>
       </article>
 
       <article class="card" data-cat="abrigo">
         <div class="card__media">
-          <img src="img/conjunto-gatito.jpg" alt="Conjunto de frisa rosa con carita de gato" width="800" height="800" loading="lazy">
+          <button class="card__zoom" type="button" data-detail>
+            <img src="img/conjunto-gatito.jpg" alt="Conjunto de frisa rosa con carita de gato" width="800" height="800" loading="lazy">
+            <span class="visually-hidden">Ver detalle</span>
+          </button>
           <span class="card__tag">Frisa</span>
         </div>
         <div class="card__body">
@@ -169,13 +178,16 @@
             <li>3-6m</li><li>6-9m</li><li>9-12m</li><li>12-18m</li>
           </ul>
           <p class="card__price">$24.900</p>
-          <a class="btn btn--verde btn--block" href="https://wa.me/5493512345678?text=Hola!%20Quiero%20pedir%20el%20Conjunto%20Gatito.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+          <a class="btn btn--verde btn--block" href="#" data-wa-product="Conjunto Gatito" data-price="$24.900" target="_blank" rel="noopener">Pedir por WhatsApp</a>
         </div>
       </article>
 
       <article class="card" data-cat="abrigo">
         <div class="card__media">
-          <img src="img/conjunto-dino.jpg" alt="Conjunto de frisa celeste con dinosaurio" width="800" height="800" loading="lazy">
+          <button class="card__zoom" type="button" data-detail>
+            <img src="img/conjunto-dino.jpg" alt="Conjunto de frisa celeste con dinosaurio" width="800" height="800" loading="lazy">
+            <span class="visually-hidden">Ver detalle</span>
+          </button>
           <span class="card__tag">Frisa</span>
         </div>
         <div class="card__body">
@@ -185,13 +197,16 @@
             <li>6-9m</li><li>9-12m</li><li>12-18m</li><li>2</li>
           </ul>
           <p class="card__price">$24.900</p>
-          <a class="btn btn--verde btn--block" href="https://wa.me/5493512345678?text=Hola!%20Quiero%20pedir%20el%20Conjunto%20Dino.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+          <a class="btn btn--verde btn--block" href="#" data-wa-product="Conjunto Dino" data-price="$24.900" target="_blank" rel="noopener">Pedir por WhatsApp</a>
         </div>
       </article>
 
       <article class="card" data-cat="liviano">
         <div class="card__media">
-          <img src="img/conjunto-waffle.jpg" alt="Musculosa waffle rosa con short floreado" width="800" height="800" loading="lazy">
+          <button class="card__zoom" type="button" data-detail>
+            <img src="img/conjunto-waffle.jpg" alt="Musculosa waffle rosa con short floreado" width="800" height="800" loading="lazy">
+            <span class="visually-hidden">Ver detalle</span>
+          </button>
           <span class="card__tag">Algodón</span>
         </div>
         <div class="card__body">
@@ -201,13 +216,16 @@
             <li>0-3m</li><li>3-6m</li><li>6-9m</li>
           </ul>
           <p class="card__price">$18.500</p>
-          <a class="btn btn--verde btn--block" href="https://wa.me/5493512345678?text=Hola!%20Quiero%20pedir%20el%20Conjunto%20Waffle.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+          <a class="btn btn--verde btn--block" href="#" data-wa-product="Conjunto Waffle" data-price="$18.500" target="_blank" rel="noopener">Pedir por WhatsApp</a>
         </div>
       </article>
 
       <article class="card" data-cat="liviano">
         <div class="card__media">
-          <img src="img/conjunto-volados.jpg" alt="Remera blanca con cuello de volados y short floreado" width="800" height="800" loading="lazy">
+          <button class="card__zoom" type="button" data-detail>
+            <img src="img/conjunto-volados.jpg" alt="Remera blanca con cuello de volados y short floreado" width="800" height="800" loading="lazy">
+            <span class="visually-hidden">Ver detalle</span>
+          </button>
           <span class="card__tag">Algodón</span>
         </div>
         <div class="card__body">
@@ -217,13 +235,16 @@
             <li>3-6m</li><li>6-9m</li><li>9-12m</li><li>12-18m</li>
           </ul>
           <p class="card__price">$19.900</p>
-          <a class="btn btn--verde btn--block" href="https://wa.me/5493512345678?text=Hola!%20Quiero%20pedir%20el%20Conjunto%20Volados.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+          <a class="btn btn--verde btn--block" href="#" data-wa-product="Conjunto Volados" data-price="$19.900" target="_blank" rel="noopener">Pedir por WhatsApp</a>
         </div>
       </article>
 
       <article class="card" data-cat="liviano">
         <div class="card__media">
-          <img src="img/conjunto-muselina.jpg" alt="Conjunto de muselina verde con botones de madera" width="800" height="800" loading="lazy">
+          <button class="card__zoom" type="button" data-detail>
+            <img src="img/conjunto-muselina.jpg" alt="Conjunto de muselina verde con botones de madera" width="800" height="800" loading="lazy">
+            <span class="visually-hidden">Ver detalle</span>
+          </button>
           <span class="card__tag">Muselina</span>
         </div>
         <div class="card__body">
@@ -233,7 +254,7 @@
             <li>12-18m</li><li>2</li><li>3</li><li>4</li>
           </ul>
           <p class="card__price">$21.500</p>
-          <a class="btn btn--verde btn--block" href="https://wa.me/5493512345678?text=Hola!%20Quiero%20pedir%20el%20Conjunto%20Muselina.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+          <a class="btn btn--verde btn--block" href="#" data-wa-product="Conjunto Muselina" data-price="$21.500" target="_blank" rel="noopener">Pedir por WhatsApp</a>
         </div>
       </article>
 
@@ -251,7 +272,7 @@
      muchísimas consultas repetidas por WhatsApp.
      ========================================================================== -->
 <section class="talles-guia" id="talles">
-  <div class="wrap talles-guia__grid">
+  <div class="wrap talles-guia__grid reveal">
 
     <div class="talles-guia__intro">
       <h2 class="h2">Guía de talles</h2>
@@ -292,7 +313,7 @@
      NOSOTROS
      ========================================================================== -->
 <section class="nosotros" id="nosotros">
-  <div class="wrap nosotros__grid">
+  <div class="wrap nosotros__grid reveal">
 
     <figure class="nosotros__photo">
       <!-- COMENTARIO REEMPLAZO: foto del local, del taller o de quien atiende -->
@@ -327,7 +348,7 @@
      PREGUNTAS FRECUENTES
      ========================================================================== -->
 <section class="info" id="preguntas">
-  <div class="wrap info__grid">
+  <div class="wrap info__grid reveal">
 
     <div class="info__intro">
       <h2 class="h2">Preguntas frecuentes</h2>
@@ -438,12 +459,12 @@
      CTA FINAL
      ========================================================================== -->
 <section class="cta" id="pedido">
-  <div class="wrap cta__inner">
+  <div class="wrap cta__inner reveal">
     <h2 class="cta__title">¿No sabés qué talle pedir?</h2>
     <p class="cta__text">
       Contanos la edad y el peso del bebé y te decimos cuál le va a quedar bien.
     </p>
-    <a class="btn btn--claro btn--big" href="https://wa.me/5493512345678?text=Hola!%20Necesito%20ayuda%20para%20elegir%20el%20talle" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
+    <a class="btn btn--claro btn--big" href="#" data-wa="Hola! Necesito ayuda para elegir el talle" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
   </div>
 </section>
 
@@ -473,8 +494,8 @@
     <div class="footer__col">
       <h3 class="footer__head">Contacto</h3>
       <!-- COMENTARIO REEMPLAZO: WhatsApp e Instagram definitivos -->
-      <a href="https://wa.me/5493512345678" target="_blank" rel="noopener">WhatsApp +54 9 351 234-5678</a>
-      <a href="https://www.instagram.com/nube.bebes" target="_blank" rel="noopener">@nube.bebes</a>
+      <a href="#" data-wa="Hola! Quiero hacer una consulta" target="_blank" rel="noopener">WhatsApp +54 9 351 234-5678</a>
+      <a href="#" data-instagram target="_blank" rel="noopener">@nube.bebes</a>
       <p class="footer__plain">Córdoba, Argentina<br>Envíos a todo el país</p>
     </div>
 
@@ -496,11 +517,45 @@
 
 
 <!-- Botón flotante de WhatsApp -->
-<a class="wa" href="https://wa.me/5493512345678?text=Hola!%20Quiero%20hacer%20un%20pedido" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+<a class="wa" id="waFloat" href="#" data-wa="Hola! Quiero hacer un pedido" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
   <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
 </a>
+
+<div class="nav-backdrop" id="backdrop"></div>
+
+<!-- Detalle de prenda: se abre al tocar una tarjeta (ver index.js). Toma foto, nombre,
+     descripción, talles y precio de la tarjeta, así que no hay que cargar nada dos veces. -->
+<dialog class="detail" id="detail" aria-labelledby="detail-title">
+  <button class="detail__close" type="button" aria-label="Cerrar">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+  <div class="detail__media"><img class="detail__img" alt="" width="800" height="800"></div>
+  <div class="detail__body">
+    <p class="detail__tag"></p>
+    <h2 class="detail__title" id="detail-title"></h2>
+    <p class="detail__desc"></p>
+    <ul class="talles detail__talles"></ul>
+    <p class="detail__price"></p>
+    <a class="btn btn--verde btn--block detail__order" href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+  </div>
+</dialog>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ClothingStore",
+  "name": "Nube",
+  "url": "https://uziel44.github.io/nube/",
+  "description": "Conjuntos de algodón para bebés y niños de 0 a 4 años. Envíos a todo el país desde Córdoba, Argentina.",
+  "image": "https://uziel44.github.io/nube/img/share-preview.jpg",
+  "telephone": "+5493512345678",
+  "address": { "@type": "PostalAddress", "addressLocality": "Córdoba", "addressCountry": "AR" },
+  "areaServed": { "@type": "Country", "name": "Argentina" },
+  "sameAs": ["https://www.instagram.com/nube.bebes"]
+}
+</script>
 
 <script src="index.js" defer></script>
 </body>

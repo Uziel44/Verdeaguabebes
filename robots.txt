@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uziel44.github.io/nube/sitemap.xml
