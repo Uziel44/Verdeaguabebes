@@ -1,4 +1,4 @@
-# Nube · Ropa de bebé y niños
+# Verdeagua Bebés · Ropa de bebé y niños
 
 Landing page estática adaptada desde la plantilla RedStore. Tres archivos,
 sin frameworks ni dependencias.
@@ -11,7 +11,7 @@ sin frameworks ni dependencias.
 |---|---|
 | `index.html` | La estructura y todo el texto de la página |
 | `index.css` | Todos los estilos, incluida la paleta |
-| `index.js` | Menú móvil, filtro de prendas, acordeón y año |
+| `index.js` | Contacto (WhatsApp/Instagram), menú móvil, filtro, detalle de prenda, acordeón, animaciones y año |
 | `img/` | Las fotos. Leé `img/LEEME.txt` |
 | `robots.txt` · `sitemap.xml` · `.nojekyll` | SEO y GitHub Pages |
 
@@ -19,7 +19,7 @@ sin frameworks ni dependencias.
 
 ## Qué cambié respecto a RedStore
 
-| RedStore | Nube | Por qué |
+| RedStore | Verdeagua Bebés | Por qué |
 |---|---|---|
 | jQuery + all.js + normalize.css | Ningún archivo externo | jQuery pesaba 90 KB y no se usaba para nada. El menú se resuelve en 15 líneas de JS común. |
 | Estrellas de valoración | Chips de talles | Las estrellas eran inventadas. Los talles son un dato real y son lo que la clienta realmente necesita saber. |
@@ -71,12 +71,20 @@ No hace falta tocar `index.js`: el filtro lee los atributos solo.
 
 ---
 
+## Datos de contacto en un solo lugar
+
+El número de WhatsApp y el Instagram se cambian **solo al principio de `index.js`**
+(`WHATSAPP` e `INSTAGRAM`). Todos los botones de WhatsApp se arman desde ahí.
+Cada prenda nueva necesita `data-wa-product="Nombre"` y `data-price="$24.900"` en su botón.
+
+Al tocar la foto de una prenda se abre una ventana de detalle con foto grande,
+descripción, talles y precio: lee todo de la tarjeta, no hay que cargar nada más.
+
 ## Antes de publicar
 
-1. **Nombre de la marca.** Puse "Nube" como provisorio. Buscá con `Ctrl+H`
+1. **Nombre de la marca.** El nombre es "Verdeagua Bebés". Si cambia, buscá con `Ctrl+H`
    y reemplazá si el negocio se llama distinto.
-2. **Número de WhatsApp.** El `5493512345678` es de ejemplo y aparece 10
-   veces. Reemplazalo.
+2. **Número de WhatsApp.** El `5493512345678` es de ejemplo: cambialo en `index.js` (y en `telephone` del bloque JSON-LD de `index.html`).
 3. **Instagram.** `@nube.bebes` también es un marcador.
 4. **Precios.** Los seis son estimados. Verificalos.
 5. **Foto de `nosotros.jpg`.** Ahora es un bloque de color.
@@ -85,7 +93,7 @@ No hace falta tocar `index.js`: el filtro lee los atributos solo.
 7. **Envíos, pagos y plazo de cambio.** Están escritos en general en las
    preguntas frecuentes. Ajustalos a tu política real.
 8. **`share-preview.jpg` y `favicon.png`.**
-9. **La URL** aparece tres veces en el `<head>`.
+9. **La URL** aparece en el `<head>`, en el JSON-LD, en `robots.txt` y en `sitemap.xml`.
 
 ---
 

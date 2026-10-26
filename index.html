@@ -6,30 +6,33 @@
 
 <!-- ==========================================================================
      COMENTARIO REEMPLAZO · NOMBRE DE LA MARCA
-     La marca provisoria es "Nube". Si el negocio se llama distinto, buscá
-     con Ctrl+H la palabra Nube y reemplazala en todo el archivo.
+     La marca es "Verdeagua Bebés". Si cambia el nombre, buscá
+     con Ctrl+H "Verdeagua Bebés" y reemplazala en todo el archivo.
      ========================================================================== -->
-<title>Nube · Ropa de bebé y niños | Conjuntos de algodón</title>
+<title>Verdeagua Bebés · Ropa de bebé y niños | Conjuntos de algodón</title>
 <meta name="description" content="Conjuntos de algodón para bebés y niños de 0 a 4 años. Prendas cómodas, suaves y sin género. Envíos a todo el país desde Córdoba, Argentina.">
 <meta name="theme-color" content="#3F9E7E">
 
 <!-- Vista previa al compartir el link por WhatsApp o Instagram -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Nube · Ropa de bebé y niños">
+<meta property="og:title" content="Verdeagua Bebés · Ropa de bebé y niños">
 <meta property="og:description" content="Conjuntos de algodón para bebés y niños de 0 a 4 años. Suaves, cómodos y para todes.">
-<meta property="og:url" content="https://uziel44.github.io/nube/">
-<meta property="og:image" content="https://uziel44.github.io/nube/img/share-preview.jpg">
+<meta property="og:url" content="https://verdeaguabebes.plexi.com.ar/">
+<meta property="og:image" content="https://verdeaguabebes.plexi.com.ar/img/share-preview.jpg">
 <meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Verdeagua Bebés">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="img/favicon.png" type="image/png">
-<link rel="canonical" href="https://uziel44.github.io/nube/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://verdeaguabebes.plexi.com.ar/">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="index.css">
+<script>document.documentElement.classList.add("js");</script>
 </head>
 
 <body>
@@ -44,7 +47,7 @@
 
     <a class="brand" href="#inicio">
       <span class="brand__mark" aria-hidden="true"></span>
-      <span class="brand__text">Nube</span>
+      <span class="brand__text">Verdeagua Bebés</span>
     </a>
 
     <nav class="nav" id="navMenu" aria-label="Principal">
@@ -53,7 +56,7 @@
       <a class="nav__link" href="#nosotros">Nosotros</a>
       <a class="nav__link" href="#preguntas">Preguntas</a>
       <!-- COMENTARIO REEMPLAZO: número de WhatsApp. Formato 54 9 + área + número, sin espacios. -->
-      <a class="btn btn--verde nav__cta" href="https://wa.me/5493512104992?text=Hola!%20Quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Hacer un pedido</a>
+      <a class="btn btn--verde nav__cta" href="#" data-wa="Hola! Quiero hacer un pedido" target="_blank" rel="noopener">Hacer un pedido</a>
     </nav>
 
     <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
@@ -85,10 +88,10 @@
     </div>
 
     <div class="hero__art">
-      <!-- COMENTARIO REEMPLAZO: estas 3 fotos son las del hero. Cambialas por las que más te gusten. -->
-      <img class="hero__img hero__img--1" src="img/conjunto-cotton-verde.jpg" alt="Conjunto de algodón verde para bebé" width="427" height="640" fetchpriority="high">
-      <img class="hero__img hero__img--2" src="img/conjunto-primavera.jpg" alt="Conjunto primavera de nena" width="427" height="640">
-      <img class="hero__img hero__img--3" src="img/conjunto-dino-celeste.jpg" alt="Conjunto celeste con dinosaurio" width="427" height="640">
+      <!-- COMENTARIO REEMPLAZO: Winnie Pooh + conjuntos beba. Cambialas por las que más te gusten. -->
+      <img class="hero__img hero__img--1" src="img/whinnie-pooh.jpg" alt="Conjunto de Winnie Pooh para bebé" width="422" height="640" fetchpriority="high">
+      <img class="hero__img hero__img--2" src="img/conjunto-bella.jpg" alt="Conjunto floreado para beba" width="480" height="640">
+      <img class="hero__img hero__img--3" src="img/conjunto-primavera.jpg" alt="Conjunto primavera para beba" width="427" height="640">
     </div>
 
   </div>
@@ -99,7 +102,7 @@
      FRANJA DE BENEFICIOS
      ========================================================================== -->
 <section class="benes">
-  <div class="wrap benes__grid">
+  <div class="wrap benes__grid reveal">
     <div class="bene">
       <span class="bene__icon bene__icon--verde" aria-hidden="true"></span>
       <h3>Algodón de verdad</h3>
@@ -130,7 +133,7 @@
 <section class="productos" id="productos">
   <div class="wrap">
 
-    <div class="section-head">
+    <div class="section-head reveal">
       <h2 class="h2">Nuestras prendas</h2>
       <p class="section-head__text">Todos los conjuntos vienen completos, remera y pantalón.</p>
     </div>
@@ -1150,7 +1153,7 @@
      muchísimas consultas repetidas por WhatsApp.
      ========================================================================== -->
 <section class="talles-guia" id="talles">
-  <div class="wrap talles-guia__grid">
+  <div class="wrap talles-guia__grid reveal">
 
     <div class="talles-guia__intro">
       <h2 class="h2">Guía de talles</h2>
@@ -1191,7 +1194,7 @@
      NOSOTROS
      ========================================================================== -->
 <section class="nosotros" id="nosotros">
-  <div class="wrap nosotros__grid">
+  <div class="wrap nosotros__grid reveal">
 
     <figure class="nosotros__photo">
       <!-- COMENTARIO REEMPLAZO: foto del local, del taller o de quien atiende -->
@@ -1226,7 +1229,7 @@
      PREGUNTAS FRECUENTES
      ========================================================================== -->
 <section class="info" id="preguntas">
-  <div class="wrap info__grid">
+  <div class="wrap info__grid reveal">
 
     <div class="info__intro">
       <h2 class="h2">Preguntas frecuentes</h2>
@@ -1337,12 +1340,12 @@
      CTA FINAL
      ========================================================================== -->
 <section class="cta" id="pedido">
-  <div class="wrap cta__inner">
+  <div class="wrap cta__inner reveal">
     <h2 class="cta__title">¿No sabés qué talle pedir?</h2>
     <p class="cta__text">
       Contanos la edad y el peso del bebé y te decimos cuál le va a quedar bien.
     </p>
-    <a class="btn btn--claro btn--big" href="https://wa.me/5493512104992?text=Hola!%20Necesito%20ayuda%20para%20elegir%20el%20talle" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
+    <a class="btn btn--claro btn--big" href="#" data-wa="Hola! Necesito ayuda para elegir el talle" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
   </div>
 </section>
 
@@ -1357,7 +1360,7 @@
 
     <div class="footer__brand">
       <span class="brand__mark" aria-hidden="true"></span>
-      <p class="footer__name">Nube</p>
+      <p class="footer__name">Verdeagua Bebés</p>
       <p class="footer__blurb">Ropa de algodón para bebés y niños de 0 a 4 años. Córdoba, Argentina.</p>
     </div>
 
@@ -1372,8 +1375,8 @@
     <div class="footer__col">
       <h3 class="footer__head">Contacto</h3>
       <!-- COMENTARIO REEMPLAZO: WhatsApp e Instagram definitivos -->
-      <a href="https://wa.me/5493512104992" target="_blank" rel="noopener">WhatsApp +54 9 351 210-4992</a>
-      <a href="https://www.instagram.com/verdeagua.bebes" target="_blank" rel="noopener">@verdeagua.bebes</a>
+      <a href="#" data-wa="Hola! Quiero hacer una consulta" target="_blank" rel="noopener">WhatsApp +54 9 351 210-4992</a>
+      <a href="#" data-instagram target="_blank" rel="noopener">@verdeagua.bebes</a>
       <p class="footer__plain">Córdoba, Argentina<br>Envíos a todo el país</p>
     </div>
 
@@ -1388,18 +1391,52 @@
   </div>
 
   <div class="wrap footer__base">
-    <p>&copy; <span id="year">2026</span> Nube</p>
-    <p>Sitio por Plexiweb Development</p>
+    <p>&copy; <span id="year">2026</span> Verdeagua Bebés</p>
+    <p>Sitio por <a href="https://web.plexi.com.ar" target="_blank" rel="noopener">Plexiweb Development</a></p>
   </div>
 </footer>
 
 
 <!-- Botón flotante de WhatsApp -->
-<a class="wa" href="https://wa.me/5493512104992?text=Hola!%20Quiero%20hacer%20un%20pedido" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+<a class="wa" id="waFloat" href="#" data-wa="Hola! Quiero hacer un pedido" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
   <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
 </a>
+
+<div class="nav-backdrop" id="backdrop"></div>
+
+<!-- Detalle de prenda: se abre al tocar una tarjeta (ver index.js). Toma foto, nombre,
+     descripción, talles y precio de la tarjeta, así que no hay que cargar nada dos veces. -->
+<dialog class="detail" id="detail" aria-labelledby="detail-title">
+  <button class="detail__close" type="button" aria-label="Cerrar">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+  <div class="detail__media"><img class="detail__img" alt="" width="800" height="800"></div>
+  <div class="detail__body">
+    <p class="detail__tag"></p>
+    <h2 class="detail__title" id="detail-title"></h2>
+    <p class="detail__desc"></p>
+    <ul class="talles detail__talles"></ul>
+    <p class="detail__price"></p>
+    <a class="btn btn--verde btn--block detail__order" href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+  </div>
+</dialog>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ClothingStore",
+  "name": "Verdeagua Bebés",
+  "url": "https://verdeaguabebes.plexi.com.ar/",
+  "description": "Conjuntos de algodón para bebés y niños de 0 a 4 años. Envíos a todo el país desde Córdoba, Argentina.",
+  "image": "https://verdeaguabebes.plexi.com.ar/img/share-preview.jpg",
+  "telephone": "+5493512104992",
+  "address": { "@type": "PostalAddress", "addressLocality": "Córdoba", "addressCountry": "AR" },
+  "areaServed": { "@type": "Country", "name": "Argentina" },
+  "sameAs": ["https://www.instagram.com/verdeagua.bebes"]
+}
+</script>
 
 <script src="index.js" defer></script>
 </body>
