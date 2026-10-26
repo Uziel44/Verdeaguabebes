@@ -22,22 +22,18 @@
   "use strict";
 
   // ---- Configuración: cambiá estos datos y se actualiza toda la web ----
-  const WHATSAPP = "5493512345678";   // 54 9 + área + número, sin "+" ni espacios
-  const INSTAGRAM = "nube.bebes";     // usuario, sin "@"
+  const WHATSAPP = "5493512104992";   // 54 9 + área + número, sin "+" ni espacios
+  const INSTAGRAM = "verdeagua.bebes";     // usuario, sin "@"
   // -----------------------------------------------------------------------
 
   const waLink = function (texto) {
     return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto);
   };
 
-  // Todo enlace con data-wa="mensaje" o data-wa-product="Nombre de la prenda"
-  // se arma acá: el número vive en una sola línea, no repetido en el HTML.
+  // Todo enlace con data-wa="mensaje" se arma acá: el número vive en una sola línea.
+  // (Los botones de cada prenda los genera el script de sincronización con su propio enlace.)
   document.querySelectorAll("[data-wa]").forEach(function (a) {
     a.href = waLink(a.dataset.wa);
-  });
-  document.querySelectorAll("[data-wa-product]").forEach(function (a) {
-    const precio = a.dataset.price ? " (" + a.dataset.price + ")" : "";
-    a.href = waLink("Hola! Quiero pedir el " + a.dataset.waProduct + precio + ". ¿Qué talles hay?");
   });
   document.querySelectorAll("[data-instagram]").forEach(function (a) {
     a.href = "https://www.instagram.com/" + INSTAGRAM + "/";
@@ -220,6 +216,18 @@
     const dPrice = detalle.querySelector(".detail__price");
     const dOrder = detalle.querySelector(".detail__order");
 
+    // Las tarjetas las genera el script de sincronización, sin botón de zoom:
+    // la foto se vuelve "botón" desde acá para que también funcione con teclado.
+    contenedorCards.querySelectorAll(".card__media").forEach(function (m) {
+      m.tabIndex = 0;
+      m.setAttribute("role", "button");
+      m.setAttribute("aria-haspopup", "dialog");
+      m.setAttribute("aria-label", "Ver detalle de " + m.closest(".card").querySelector(".card__name").textContent);
+      m.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); m.click(); }
+      });
+    });
+
     contenedorCards.addEventListener("click", function (e) {
       const card = e.target.closest(".card");
       if (!card || e.target.closest("a")) return;
@@ -227,7 +235,7 @@
       const img = card.querySelector(".card__media img");
       const tag = card.querySelector(".card__tag");
       const talles = card.querySelector(".talles");
-      const pedir = card.querySelector("[data-wa-product]");
+      const pedir = card.querySelector(".btn");
 
       dImg.src = img.currentSrc || img.src;
       dImg.alt = img.alt;
@@ -236,6 +244,7 @@
       dTitle.textContent = card.querySelector(".card__name").textContent;
       dDesc.textContent = card.querySelector(".card__desc").textContent;
       dTalles.innerHTML = talles ? talles.innerHTML : "";
+      dTalles.hidden = !talles;
       dPrice.textContent = card.querySelector(".card__price").textContent;
       dOrder.href = pedir.href;
 

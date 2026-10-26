@@ -88,10 +88,10 @@
     </div>
 
     <div class="hero__art">
-      <!-- COMENTARIO REEMPLAZO: estas 3 fotos son las del hero. Cambialas por las que más te gusten. -->
-      <img class="hero__img hero__img--1" src="img/conjunto-muselina.jpg" alt="Conjunto de muselina verde para bebé" width="800" height="800" fetchpriority="high">
-      <img class="hero__img hero__img--2" src="img/conjunto-rosas.jpg" alt="Conjunto de frisa con estampa de rosas" width="800" height="800">
-      <img class="hero__img hero__img--3" src="img/conjunto-dino.jpg" alt="Conjunto de frisa celeste con dinosaurio" width="800" height="800">
+      <!-- COMENTARIO REEMPLAZO: Winnie Pooh + conjuntos beba. Cambialas por las que más te gusten. -->
+      <img class="hero__img hero__img--1" src="img/whinnie-pooh.jpg" alt="Conjunto de Winnie Pooh para bebé" width="422" height="640" fetchpriority="high">
+      <img class="hero__img hero__img--2" src="img/conjunto-bella.jpg" alt="Conjunto floreado para beba" width="480" height="640">
+      <img class="hero__img hero__img--3" src="img/conjunto-primavera.jpg" alt="Conjunto primavera para beba" width="427" height="640">
     </div>
 
   </div>
@@ -124,8 +124,11 @@
 
 <!-- ==========================================================================
      PRODUCTOS CON FILTRO
-     Para agregar una prenda nueva: copiá un bloque <article class="card">
-     entero, cambiá la foto, el nombre, el precio y el data-cat.
+     Los filtros y las tarjetas se generan desde plexipedidos (usuario
+     verdeagua-bebes) con sync_productos_verdeaguabebes.py, que está en
+     "50 applicaciones/12 pyth commitero". Para cambiar una prenda, cambiala
+     en plexipedidos y volvé a correr el script: lo que edites a mano entre
+     los marcadores PRODUCTOS:INICIO y PRODUCTOS:FIN se pisa.
      ========================================================================== -->
 <section class="productos" id="productos">
   <div class="wrap">
@@ -135,130 +138,1008 @@
       <p class="section-head__text">Todos los conjuntos vienen completos, remera y pantalón.</p>
     </div>
 
+    <!-- PRODUCTOS:INICIO — zona generada por sync_productos_verdeaguabebes.py, no editar a mano -->
     <div class="filtros" id="filtros" role="group" aria-label="Filtrar prendas">
       <button class="filtro is-active" type="button" data-filtro="todos">Todo</button>
-      <button class="filtro" type="button" data-filtro="abrigo">Abrigo</button>
-      <button class="filtro" type="button" data-filtro="liviano">Liviano</button>
+      <button class="filtro" type="button" data-filtro="bebe-varon">Bebe varon</button>
+      <button class="filtro" type="button" data-filtro="recien-nacido">Recien nacido</button>
+      <button class="filtro" type="button" data-filtro="conjunto-bella">Conjuntos beba</button>
+      <button class="filtro" type="button" data-filtro="conjuntos-personajes">Conjuntos personajes</button>
     </div>
 
     <div class="cards" id="cards">
 
-      <article class="card" data-cat="abrigo">
+      <article class="card" data-cat="bebe-varon">
         <div class="card__media">
-          <button class="card__zoom" type="button" data-detail>
-            <img src="img/conjunto-rosas.jpg" alt="Conjunto de frisa rosa con estampa de rosas" width="800" height="800" loading="lazy">
-            <span class="visually-hidden">Ver detalle</span>
-          </button>
-          <span class="card__tag">Frisa</span>
+          <img src="img/bermuda-gabardina-cordon.jpg" alt="Bermuda gabardina cordon" width="480" height="640" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
         </div>
         <div class="card__body">
-          <h3 class="card__name">Conjunto Rosas</h3>
-          <p class="card__desc">Buzo de frisa estampado y jogger a tono con puños.</p>
-          <ul class="talles">
-            <li>0-3m</li><li>3-6m</li><li>6-9m</li><li>9-12m</li>
-          </ul>
-          <!-- COMENTARIO REEMPLAZO: precio -->
-          <p class="card__price">$24.900</p>
-          <a class="btn btn--verde btn--block" href="#" data-wa-product="Conjunto Rosas" data-price="$24.900" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+          <h3 class="card__name">Bermuda gabardina cordon</h3>
+          <p class="card__desc">Bermuda gabardina talles 2 al 6 hasta 3 años aprox.</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Bermuda%20gabardina%20cordon.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
         </div>
       </article>
 
-      <article class="card" data-cat="abrigo">
+      <article class="card" data-cat="bebe-varon">
         <div class="card__media">
-          <button class="card__zoom" type="button" data-detail>
-            <img src="img/conjunto-gatito.jpg" alt="Conjunto de frisa rosa con carita de gato" width="800" height="800" loading="lazy">
-            <span class="visually-hidden">Ver detalle</span>
-          </button>
-          <span class="card__tag">Frisa</span>
+          <img src="img/bermuda-gabardina-gris.jpg" alt="Bermuda gabardina gris" width="287" height="640" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
         </div>
         <div class="card__body">
-          <h3 class="card__name">Conjunto Gatito</h3>
-          <p class="card__desc">Buzo con carita bordada y jogger con cordón.</p>
-          <ul class="talles">
-            <li>3-6m</li><li>6-9m</li><li>9-12m</li><li>12-18m</li>
-          </ul>
-          <p class="card__price">$24.900</p>
-          <a class="btn btn--verde btn--block" href="#" data-wa-product="Conjunto Gatito" data-price="$24.900" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+          <h3 class="card__name">Bermuda gabardina gris</h3>
+          <p class="card__desc">Disponible talle 3</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Bermuda%20gabardina%20gris.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
         </div>
       </article>
 
-      <article class="card" data-cat="abrigo">
+      <article class="card" data-cat="bebe-varon">
         <div class="card__media">
-          <button class="card__zoom" type="button" data-detail>
-            <img src="img/conjunto-dino.jpg" alt="Conjunto de frisa celeste con dinosaurio" width="800" height="800" loading="lazy">
-            <span class="visually-hidden">Ver detalle</span>
-          </button>
-          <span class="card__tag">Frisa</span>
+          <img src="img/bermuda-gabardina-mostaza.jpg" alt="Bermuda gabardina mostaza" width="287" height="640" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
         </div>
         <div class="card__body">
-          <h3 class="card__name">Conjunto Dino</h3>
-          <p class="card__desc">Buzo celeste con estampa y jogger con cordón negro.</p>
-          <ul class="talles">
-            <li>6-9m</li><li>9-12m</li><li>12-18m</li><li>2</li>
-          </ul>
-          <p class="card__price">$24.900</p>
-          <a class="btn btn--verde btn--block" href="#" data-wa-product="Conjunto Dino" data-price="$24.900" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+          <h3 class="card__name">Bermuda gabardina mostaza</h3>
+          <p class="card__desc">Disponible talle 5</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Bermuda%20gabardina%20mostaza.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
         </div>
       </article>
 
-      <article class="card" data-cat="liviano">
+      <article class="card" data-cat="bebe-varon">
         <div class="card__media">
-          <button class="card__zoom" type="button" data-detail>
-            <img src="img/conjunto-waffle.jpg" alt="Musculosa waffle rosa con short floreado" width="800" height="800" loading="lazy">
-            <span class="visually-hidden">Ver detalle</span>
-          </button>
-          <span class="card__tag">Algodón</span>
+          <img src="img/bermuda-gabardina-negra.jpg" alt="Bermuda gabardina negra" width="480" height="640" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
         </div>
         <div class="card__body">
-          <h3 class="card__name">Conjunto Waffle</h3>
-          <p class="card__desc">Musculosa de waffle con volados y short floreado.</p>
-          <ul class="talles">
-            <li>0-3m</li><li>3-6m</li><li>6-9m</li>
-          </ul>
-          <p class="card__price">$18.500</p>
-          <a class="btn btn--verde btn--block" href="#" data-wa-product="Conjunto Waffle" data-price="$18.500" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+          <h3 class="card__name">Bermuda gabardina negra</h3>
+          <p class="card__desc">Bermuda de gabardina talles 2 al 6 (hasta 3 años aprox.</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Bermuda%20gabardina%20negra.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
         </div>
       </article>
 
-      <article class="card" data-cat="liviano">
+      <article class="card" data-cat="bebe-varon">
         <div class="card__media">
-          <button class="card__zoom" type="button" data-detail>
-            <img src="img/conjunto-volados.jpg" alt="Remera blanca con cuello de volados y short floreado" width="800" height="800" loading="lazy">
-            <span class="visually-hidden">Ver detalle</span>
-          </button>
-          <span class="card__tag">Algodón</span>
+          <img src="img/bermuda-gabardina-verde.jpg" alt="Bermuda gabardina verde" width="480" height="640" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
         </div>
         <div class="card__body">
-          <h3 class="card__name">Conjunto Volados</h3>
-          <p class="card__desc">Remera blanca con cuello de volados y short a juego.</p>
-          <ul class="talles">
-            <li>3-6m</li><li>6-9m</li><li>9-12m</li><li>12-18m</li>
-          </ul>
-          <p class="card__price">$19.900</p>
-          <a class="btn btn--verde btn--block" href="#" data-wa-product="Conjunto Volados" data-price="$19.900" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+          <h3 class="card__name">Bermuda gabardina verde</h3>
+          <p class="card__desc">Disponible talle 4 y 6 (hasta 2 años y medio aprox.)</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Bermuda%20gabardina%20verde.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
         </div>
       </article>
 
-      <article class="card" data-cat="liviano">
+      <article class="card" data-cat="bebe-varon">
         <div class="card__media">
-          <button class="card__zoom" type="button" data-detail>
-            <img src="img/conjunto-muselina.jpg" alt="Conjunto de muselina verde con botones de madera" width="800" height="800" loading="lazy">
-            <span class="visually-hidden">Ver detalle</span>
-          </button>
-          <span class="card__tag">Muselina</span>
+          <img src="img/camisa-beige.jpg" alt="Camisa beige" width="287" height="640" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
         </div>
         <div class="card__body">
-          <h3 class="card__name">Conjunto Muselina</h3>
-          <p class="card__desc">Camisa de muselina con botones de madera y short con cordón.</p>
-          <ul class="talles">
-            <li>12-18m</li><li>2</li><li>3</li><li>4</li>
-          </ul>
-          <p class="card__price">$21.500</p>
-          <a class="btn btn--verde btn--block" href="#" data-wa-product="Conjunto Muselina" data-price="$21.500" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+          <h3 class="card__name">Camisa beige</h3>
+          <p class="card__desc">Camisita en color beige, tela seda<br>Disponibles talle 2 3 4 6 (hasta 2 años y medio)</p>
+          <p class="card__price">$10.500</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Camisa%20beige.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bebe-varon">
+        <div class="card__media">
+          <img src="img/camisa-turqueza-y-pantalon-gabardina.jpg" alt="Camisa turqueza" width="287" height="640" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Camisa turqueza</h3>
+          <p class="card__desc">Camisas turqueza disponible talle 1 al 6<br>Pantalon gabardina disponible talle 1 al 6</p>
+          <p class="card__price">$10.500</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Camisa%20turqueza.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bebe-varon">
+        <div class="card__media">
+          <img src="img/conjunto-cotton.jpg" alt="Conjunto cotton" width="480" height="640" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto cotton</h3>
+          <p class="card__desc">Disponible talle 4 y 6 (hasta 2 años y medio)</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20cotton.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bebe-varon">
+        <div class="card__media">
+          <img src="img/conjunto-cotton-verde.jpg" alt="Conjunto cotton verde" width="427" height="640" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto cotton verde</h3>
+          <p class="card__desc">Disponible talle 3 y 5</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20cotton%20verde.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bebe-varon">
+        <div class="card__media">
+          <img src="img/conjunto-de-peluche.jpg" alt="Conjunto de peluche" width="427" height="640" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto de peluche</h3>
+          <p class="card__desc">Conjunto de peluche color naranja<br>Disponible talle 1 al 5</p>
+          <p class="card__price">$20.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20de%20peluche.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bebe-varon">
+        <div class="card__media">
+          <img src="img/conjunto-dino-celeste.jpg" alt="Conjunto dino celeste" width="427" height="640" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto dino celeste</h3>
+          <p class="card__desc">Conjunto buzo y babucha frizado<br>Disponible talle 4 y 5</p>
+          <p class="card__price">$20.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20dino%20celeste.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bebe-varon">
+        <div class="card__media">
+          <img src="img/conjunto-nene.jpg" alt="Conjunto nene" width="480" height="640" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto nene</h3>
+          <p class="card__desc">Remera algodon y bermuda tela bengalina disponible talle 2 (6 meses aprox.)</p>
+          <p class="card__price">$12.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20nene.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bebe-varon">
+        <div class="card__media">
+          <img src="img/conjunto-osito.jpg" alt="Conjunto osito" width="427" height="640" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto osito</h3>
+          <p class="card__desc">Conjunto joggin buzo y babucha<br>Disponible talle 1, 2 y 3</p>
+          <p class="card__price">$20.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20osito.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bebe-varon">
+        <div class="card__media">
+          <img src="img/conjunto-pirata.jpg" alt="Conjunto pirata" width="480" height="640" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto pirata</h3>
+          <p class="card__desc">Tela wafle y modal<br>Disponible talle 4 y 6</p>
+          <p class="card__price">$15.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20pirata.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bebe-varon">
+        <div class="card__media">
+          <img src="img/conjunto-rustico.jpg" alt="Conjunto rustico" width="640" height="480" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto rustico</h3>
+          <p class="card__desc">Conjunto de algodon rustico media estacion<br>Disponible talle 4 y 5 (desde 1 año y medio a 2 años y medio)</p>
+          <p class="card__price">$20.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20rustico.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bebe-varon">
+        <div class="card__media">
+          <img src="img/conjunto-turqueza.jpg" alt="Conjunto turqueza" width="480" height="640" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto turqueza</h3>
+          <p class="card__desc">Disponible body rayado algodon y bermuda bengalina talle 3</p>
+          <p class="card__price">$12.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20turqueza.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bebe-varon">
+        <div class="card__media">
+          <img src="img/enterito-cotton.jpg" alt="Enterito cotton" width="514" height="640" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Enterito cotton</h3>
+          <p class="card__desc">Enterito cotton color azul<br>Disponible talle 3, 5 y 6</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Enterito%20cotton.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bebe-varon">
+        <div class="card__media">
+          <img src="img/jardinero-mom.jpg" alt="Jardinero MOM" width="480" height="640" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Jardinero MOM</h3>
+          <p class="card__desc">Jardinero jeans MOM<br>Disponible talle 5 ( 3 a 4 años)</p>
+          <p class="card__price">$24.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Jardinero%20MOM.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bebe-varon">
+        <div class="card__media">
+          <img src="img/jardineros-chupin.jpg" alt="Jardineros chupin" width="427" height="640" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Jardineros chupin</h3>
+          <p class="card__desc">Jardinero elastizado azul<br>Tela jeans. Talles 2 al 6</p>
+          <p class="card__price">$20.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Jardineros%20chupin.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bebe-varon">
+        <div class="card__media">
+          <img src="img/pantalon-gabardina-marron.jpg" alt="Pantalon gabardina marron" width="480" height="640" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Pantalon gabardina marron</h3>
+          <p class="card__desc">Disponible talle 5</p>
+          <p class="card__price">$14.800</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Pantalon%20gabardina%20marron.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bebe-varon">
+        <div class="card__media">
+          <img src="img/pantalon-gabardina-verde.jpg" alt="Pantalon gabardina verde" width="480" height="640" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Pantalon gabardina verde</h3>
+          <p class="card__desc">Disponible talle 3 y 6</p>
+          <p class="card__price">$14.800</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Pantalon%20gabardina%20verde.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bebe-varon">
+        <div class="card__media">
+          <img src="img/pantalon-mostaza.jpg" alt="Pantalon mostaza" width="480" height="640" loading="lazy">
+          <span class="card__tag">Bebe varon</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Pantalon mostaza</h3>
+          <p class="card__desc">Pantalon corte chino color mostaza<br>Disponible talle 2</p>
+          <p class="card__price">$14.800</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Pantalon%20mostaza.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="recien-nacido">
+        <div class="card__media">
+          <img src="img/ajuar-bebe.jpg" alt="Ajuar bebe" width="480" height="640" loading="lazy">
+          <span class="card__tag">Recien nacido</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Ajuar bebe</h3>
+          <p class="card__desc">Ajuar de nacimiento<br>Batita, ranita y gorrito talle 1</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Ajuar%20bebe.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="recien-nacido">
+        <div class="card__media">
+          <img src="img/ajuar-beige.jpg" alt="Ajuar beige" width="640" height="480" loading="lazy">
+          <span class="card__tag">Recien nacido</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Ajuar beige</h3>
+          <p class="card__desc">Ajuar de nacimiento talle unico. 4 piezas<br>De plush y polar</p>
+          <p class="card__price">$30.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Ajuar%20beige.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="recien-nacido">
+        <div class="card__media">
+          <img src="img/ajuar-celeste.jpg" alt="Ajuar celeste" width="640" height="480" loading="lazy">
+          <span class="card__tag">Recien nacido</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Ajuar celeste</h3>
+          <p class="card__desc">Ajuar de nacimiento talle unico, 4 piezas<br>De plush y polar</p>
+          <p class="card__price">$30.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Ajuar%20celeste.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="recien-nacido">
+        <div class="card__media">
+          <img src="img/ajuar-conejita.jpg" alt="Ajuar conejita" width="480" height="640" loading="lazy">
+          <span class="card__tag">Recien nacido</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Ajuar conejita</h3>
+          <p class="card__desc">Body y ranita bebe talle 0 (tela de verano)</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Ajuar%20conejita.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="recien-nacido">
+        <div class="card__media">
+          <img src="img/ajuar-duendes.jpg" alt="Ajuar duendes" width="640" height="480" loading="lazy">
+          <span class="card__tag">Recien nacido</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Ajuar duendes</h3>
+          <p class="card__desc">Ajuar 6 piezas<br>Campera plush, chaleco y pantalon polar soft, body babita y baberito</p>
+          <p class="card__price">$30.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Ajuar%20duendes.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="recien-nacido">
+        <div class="card__media">
+          <img src="img/ajuar-osito.jpg" alt="Ajuar osito" width="480" height="640" loading="lazy">
+          <span class="card__tag">Recien nacido</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Ajuar osito</h3>
+          <p class="card__desc">Ajuar de nacimiento<br>Batita, ranita y gorrito talle 1</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Ajuar%20osito.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="recien-nacido">
+        <div class="card__media">
+          <img src="img/ajuar-pirata-azul.jpg" alt="Ajuar pirata azul" width="480" height="640" loading="lazy">
+          <span class="card__tag">Recien nacido</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Ajuar pirata azul</h3>
+          <p class="card__desc">Ajuar pirata rayado<br>Remera, short y babero<br>Talle 0 de RN</p>
+          <p class="card__price">$15.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Ajuar%20pirata%20azul.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="recien-nacido">
+        <div class="card__media">
+          <img src="img/body-barquito.jpg" alt="Body barquito" width="480" height="640" loading="lazy">
+          <span class="card__tag">Recien nacido</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Body barquito</h3>
+          <p class="card__desc">Body talle 0 (tela de verano)</p>
+          <p class="card__price">$9.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Body%20barquito.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="recien-nacido">
+        <div class="card__media">
+          <img src="img/body-elefante.jpg" alt="Body elefante" width="480" height="640" loading="lazy">
+          <span class="card__tag">Recien nacido</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Body elefante</h3>
+          <p class="card__desc">Body talle 0 (tela de verano)</p>
+          <p class="card__price">$9.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Body%20elefante.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="recien-nacido">
+        <div class="card__media">
+          <img src="img/conjunto-set-nacimiento.jpg" alt="Conjunto set nacimiento" width="480" height="640" loading="lazy">
+          <span class="card__tag">Recien nacido</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto set nacimiento</h3>
+          <p class="card__desc">Set nacimiento<br>Body, ranita. Talle 1</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20set%20nacimiento.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjunto-bella">
+        <div class="card__media">
+          <img src="img/body-2.jpg" alt="Body 2" width="480" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos beba</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Body 2</h3>
+          <p class="card__desc">Body algodon disponible talle 2</p>
+          <p class="card__price">$8.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Body%202.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjunto-bella">
+        <div class="card__media">
+          <img src="img/conjunto-blanco-rosas.jpg" alt="Conjunto blanco rosas" width="480" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos beba</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto blanco rosas</h3>
+          <p class="card__desc">Disponible talle 2</p>
+          <p class="card__price">$18.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20blanco%20rosas.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjunto-bella">
+        <div class="card__media">
+          <img src="img/conjunto-verde-agua.jpg" alt="Conjunto conejitos licra" width="471" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos beba</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto conejitos licra</h3>
+          <p class="card__desc">Conjunto body vincha y biker<br>Disponible talle 1 RN</p>
+          <p class="card__price">$18.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20conejitos%20licra.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjunto-bella">
+        <div class="card__media">
+          <img src="img/conjunto-floreado-rojo.jpg" alt="Conjunto floreado rojo" width="480" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos beba</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto floreado rojo</h3>
+          <p class="card__desc">Conjunto beba talle 5<br>Body vincha y biker</p>
+          <p class="card__price">$18.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20floreado%20rojo.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjunto-bella">
+        <div class="card__media">
+          <img src="img/conjunto-jardinero-campera.jpg" alt="Conjunto jardinero + campera" width="480" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos beba</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto jardinero + campera</h3>
+          <p class="card__desc">Conjunto de jeans color negro<br>Camperita mas jardinero. Talle 2 al 6</p>
+          <p class="card__price">$48.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20jardinero%20%2B%20campera.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjunto-bella">
+        <div class="card__media">
+          <img src="img/conjunto-bella.jpg" alt="Conjunto nena" width="480" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos beba</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto nena</h3>
+          <p class="card__desc">Conjunto vestido bombachudo y vinchita<br>Talle 1 y 3</p>
+          <p class="card__price">$15.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20nena.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjunto-bella">
+        <div class="card__media">
+          <img src="img/conjunto-bel.jpg" alt="Conjunto nena" width="480" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos beba</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto nena</h3>
+          <p class="card__desc">Vestidito detalles flores, bombachudo y vincha<br>Disponible talle 2 y 4</p>
+          <p class="card__price">$15.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20nena.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjunto-bella">
+        <div class="card__media">
+          <img src="img/conjunto-nena.jpg" alt="Conjunto nena" width="480" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos beba</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto nena</h3>
+          <p class="card__desc">Body, vincha y bombachudo. Detalle flor roja<br>Talles 1 2 4<br>Desde RN a 12 meses</p>
+          <p class="card__price">$15.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20nena.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjunto-bella">
+        <div class="card__media">
+          <img src="img/conjunto-primavera.jpg" alt="Conjunto primavera" width="427" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos beba</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto primavera</h3>
+          <p class="card__desc">Vestidito, calza, vinchita<br>Disponible talle 5</p>
+          <p class="card__price">$15.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20primavera.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjunto-bella">
+        <div class="card__media">
+          <img src="img/conjunto-red.jpg" alt="Conjunto red" width="480" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos beba</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto red</h3>
+          <p class="card__desc">Vestido rojo detalle dorado, bombachudo y vincha<br>Disponible talle 1 (1-2 meses)</p>
+          <p class="card__price">$16.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20red.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjunto-bella">
+        <div class="card__media">
+          <img src="img/conjunto-rojo.jpg" alt="Conjunto rojo" width="427" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos beba</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto rojo</h3>
+          <p class="card__desc">Body algodon detalles rosas, jumper rojo tela bengalina. Inluye vincha<br>Disponible talles 2 al 6</p>
+          <p class="card__price">$18.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20rojo.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjunto-bella">
+        <div class="card__media">
+          <img src="img/conjunto-rustico-nena.jpg" alt="Conjunto rustico nena" width="480" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos beba</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto rustico nena</h3>
+          <p class="card__desc">Conjunto buzo y pantalon tela algodon rustico<br>Disponible talle 5 (2 años y medio)</p>
+          <p class="card__price">$20.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20rustico%20nena.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjunto-bella">
+        <div class="card__media">
+          <img src="img/conjunto-verde.jpg" alt="Conjunto verde" width="540" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos beba</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto verde</h3>
+          <p class="card__desc">Conjunto body vincha y biker color verde<br>Disponible talle 1 RN</p>
+          <p class="card__price">$18.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Conjunto%20verde.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjunto-bella">
+        <div class="card__media">
+          <img src="img/jardinero-beba.jpg" alt="Jardinero beba" width="640" height="480" loading="lazy">
+          <span class="card__tag">Conjuntos beba</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Jardinero beba</h3>
+          <p class="card__desc">Jardinero de jeans talle 2 al 6</p>
+          <p class="card__price">$24.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Jardinero%20beba.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjunto-bella">
+        <div class="card__media">
+          <img src="img/jardinero-chupin.jpg" alt="Jardinero chupin" width="427" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos beba</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Jardinero chupin</h3>
+          <p class="card__desc">Jardinero de jeans elastizado<br>Talles 2 al 6</p>
+          <p class="card__price">$20.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Jardinero%20chupin.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjunto-bella">
+        <div class="card__media">
+          <img src="img/monito-amarillo.jpg" alt="Monito amarillo" width="501" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos beba</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Monito amarillo</h3>
+          <p class="card__desc">Monito de morley talle 1</p>
+          <p class="card__price">$10.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Monito%20amarillo.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjunto-bella">
+        <div class="card__media">
+          <img src="img/monito-fuccia.jpg" alt="Monito fuccia" width="470" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos beba</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Monito fuccia</h3>
+          <p class="card__desc">Monito tela morley<br>Disponible talle 1 y 4</p>
+          <p class="card__price">$10.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Monito%20fuccia.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjunto-bella">
+        <div class="card__media">
+          <img src="img/monito-mono.jpg" alt="Monito moño" width="296" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos beba</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Monito moño</h3>
+          <p class="card__desc">Monito tela algodon<br>Disponible talle 4 (18 meses aprox.)</p>
+          <p class="card__price">$10.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Monito%20mo%C3%B1o.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/angela.jpg" alt="Angela" width="287" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Angela</h3>
+          <p class="card__desc">Body y pantalon<br>Disponible talle 4 y 5</p>
+          <p class="card__price">$18.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Angela.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/bambi.jpg" alt="Bambi" width="630" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Bambi</h3>
+          <p class="card__desc">Body pantalon y gorrito<br>Disponible 1, 2. Desde RN</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Bambi.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/bambii.jpg" alt="Bambii" width="480" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Bambii</h3>
+          <p class="card__desc">Body y pantalon<br>Disponible talle 4</p>
+          <p class="card__price">$18.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Bambii.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/barbie.jpg" alt="Barbie" width="289" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Barbie</h3>
+          <p class="card__desc">Body y short<br>Disponible talle 1 y 6<br>Talle 1 $14000<br>Talle 6 $18000</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Barbie.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/bugs-bunny.jpg" alt="Bugs bunny" width="640" height="624" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Bugs bunny</h3>
+          <p class="card__desc">Vendido</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Bugs%20bunny.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/bugs-bunny-verano.jpg" alt="Bugs bunny verano" width="640" height="573" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Bugs bunny verano</h3>
+          <p class="card__desc">Body y short<br>Disponible talle 6 (18 meses)</p>
+          <p class="card__price">$18.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Bugs%20bunny%20verano.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/buzz-lightyear.jpg" alt="Buzz Lightyear" width="461" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Buzz Lightyear</h3>
+          <p class="card__desc">Body pantalon y gorrito<br>Disponible 1, 2, 3. Desde RN a 3 meses y medio</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Buzz%20Lightyear.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/daisy-fuccia.jpg" alt="Daisy fuccia" width="640" height="496" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Daisy fuccia</h3>
+          <p class="card__desc">Body y pantalon<br>Disponible talle 4 y 5</p>
+          <p class="card__price">$18.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Daisy%20fuccia.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/daisy-minnie.jpg" alt="Daisy, minnie" width="481" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Daisy, minnie</h3>
+          <p class="card__desc">Body pantalon y gorrito<br>Disponible talle 1</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Daisy%2C%20minnie.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/garfield.jpg" alt="Garfield" width="480" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Garfield</h3>
+          <p class="card__desc">Vendido</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Garfield.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/hello-kitty.jpg" alt="Hello kitty" width="480" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Hello kitty</h3>
+          <p class="card__desc">Body pantalon y gorrito<br>Disponible 1, 2. Desde RN</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Hello%20kitty.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/mickey.jpg" alt="Mickey" width="414" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Mickey</h3>
+          <p class="card__desc">Body pantalon y gorrito. Tela algodon<br>Talles 1 2 3</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Mickey.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/mickey-azul.jpg" alt="Mickey azul" width="640" height="592" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Mickey azul</h3>
+          <p class="card__desc">Vendido</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Mickey%20azul.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/mickey-corto.jpg" alt="Mickey corto" width="640" height="518" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Mickey corto</h3>
+          <p class="card__desc">Body y short<br>Disponible talle 6 (18 meses)</p>
+          <p class="card__price">$18.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Mickey%20corto.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/mickey-gris.jpg" alt="Mickey gris" width="491" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Mickey gris</h3>
+          <p class="card__desc">Body pantalon y gorrito<br>Disponible talle 3 (3 meses aprox.)</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Mickey%20gris.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/minnie-beige.jpg" alt="Minnie beige" width="452" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Minnie beige</h3>
+          <p class="card__desc">Body pantalon y gorrito<br>Disponible 1, 2, 3. Desde RN a 3 meses y medio</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Minnie%20beige.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/minnie-verano.jpg" alt="Minnie verano" width="480" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Minnie verano</h3>
+          <p class="card__desc">Body y short<br>Disponible talle 5 y 6</p>
+          <p class="card__price">$18.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Minnie%20verano.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/pato-lucas.jpg" alt="Pato lucas" width="480" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Pato lucas</h3>
+          <p class="card__desc">Body y short<br>Disponible talle 6</p>
+          <p class="card__price">$18.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Pato%20lucas.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/plim-plim.jpg" alt="Plim plim" width="590" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Plim plim</h3>
+          <p class="card__desc">Body pantalon y gorrito<br>Disponible 1, 2, 3. Desde RN a 3 meses y medio</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Plim%20plim.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/principe.jpg" alt="Principe" width="640" height="462" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Principe</h3>
+          <p class="card__desc">Body pantalon y gorrito. Tela algodon<br>Disponible talle 2</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Principe.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/mickey-rojo.jpg" alt="Rey leon" width="640" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Rey leon</h3>
+          <p class="card__desc">Body pantalon y gorrito<br>Disponible 2, 3.  Desde RN a 3 meses y medio</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Rey%20leon.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/rey-leon-gris.jpg" alt="Rey leon gris" width="588" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Rey leon gris</h3>
+          <p class="card__desc">Body y pantalon, tela algodon<br>Disponible talle 2, 3, 4 y 5</p>
+          <p class="card__price">$18.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Rey%20leon%20gris.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/stitch.jpg" alt="Stitch" width="507" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Stitch</h3>
+          <p class="card__desc">Body pantalon y gorrito<br>Disponible talle 1 RN</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Stitch.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/tigger.jpg" alt="Tigger" width="480" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Tigger</h3>
+          <p class="card__desc">Body pantalon y gorrito<br>Disponible talle 2, 3. Desde RN a 3 meses y medio</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Tigger.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/whinnie-pooh.jpg" alt="Whinnie pooh" width="422" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Whinnie pooh</h3>
+          <p class="card__desc">Body pantalon y gorrito tela algodon<br>Talle 1 2 3</p>
+          <p class="card__price">$14.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Whinnie%20pooh.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="conjuntos-personajes">
+        <div class="card__media">
+          <img src="img/whinnie-pooh-beige.jpg" alt="Whinnie pooh beige" width="611" height="640" loading="lazy">
+          <span class="card__tag">Conjuntos personajes</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Whinnie pooh beige</h3>
+          <p class="card__desc">Body y pantalon<br>Disponible talle 4, 5, 6</p>
+          <p class="card__price">$18.000</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512104992?text=Hola%21%20Quiero%20pedir%3A%20Whinnie%20pooh%20beige.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
         </div>
       </article>
 
     </div>
+
+    <!-- PRODUCTOS:FIN -->
 
     <p class="cards__vacio" id="cardsVacio" hidden>No hay prendas en esta categoría.</p>
 
@@ -494,8 +1375,8 @@
     <div class="footer__col">
       <h3 class="footer__head">Contacto</h3>
       <!-- COMENTARIO REEMPLAZO: WhatsApp e Instagram definitivos -->
-      <a href="#" data-wa="Hola! Quiero hacer una consulta" target="_blank" rel="noopener">WhatsApp +54 9 351 234-5678</a>
-      <a href="#" data-instagram target="_blank" rel="noopener">@nube.bebes</a>
+      <a href="#" data-wa="Hola! Quiero hacer una consulta" target="_blank" rel="noopener">WhatsApp +54 9 351 210-4992</a>
+      <a href="#" data-instagram target="_blank" rel="noopener">@verdeagua.bebes</a>
       <p class="footer__plain">Córdoba, Argentina<br>Envíos a todo el país</p>
     </div>
 
@@ -550,10 +1431,10 @@
   "url": "https://verdeaguabebes.plexi.com.ar/",
   "description": "Conjuntos de algodón para bebés y niños de 0 a 4 años. Envíos a todo el país desde Córdoba, Argentina.",
   "image": "https://verdeaguabebes.plexi.com.ar/img/share-preview.jpg",
-  "telephone": "+5493512345678",
+  "telephone": "+5493512104992",
   "address": { "@type": "PostalAddress", "addressLocality": "Córdoba", "addressCountry": "AR" },
   "areaServed": { "@type": "Country", "name": "Argentina" },
-  "sameAs": ["https://www.instagram.com/nube.bebes"]
+  "sameAs": ["https://www.instagram.com/verdeagua.bebes"]
 }
 </script>
 

@@ -480,6 +480,7 @@ button { font-family: inherit; }
 .card .btn { margin-top: auto; }
 
 /* La foto abre el detalle: es un botón, no un enlace, para que funcione con teclado */
+.card__media[role="button"] { cursor: zoom-in; }
 .card__zoom {
   display: block;
   width: 100%;
