@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ==========================================================================
+     COMENTARIO REEMPLAZO · NOMBRE DE LA MARCA
+     La marca provisoria es "Nube". Si el negocio se llama distinto, buscá
+     con Ctrl+H la palabra Nube y reemplazala en todo el archivo.
+     ========================================================================== -->
+<title>Nube · Ropa de bebé y niños | Conjuntos de algodón</title>
+<meta name="description" content="Conjuntos de algodón para bebés y niños de 0 a 4 años. Prendas cómodas, suaves y sin género. Envíos a todo el país desde Córdoba, Argentina.">
+<meta name="theme-color" content="#3F9E7E">
+
+<!-- Vista previa al compartir el link por WhatsApp o Instagram -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nube · Ropa de bebé y niños">
+<meta property="og:description" content="Conjuntos de algodón para bebés y niños de 0 a 4 años. Suaves, cómodos y para todes.">
+<meta property="og:url" content="https://uziel44.github.io/nube/">
+<meta property="og:image" content="https://uziel44.github.io/nube/img/share-preview.jpg">
+<meta property="og:locale" content="es_AR">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="img/favicon.png" type="image/png">
+<link rel="canonical" href="https://uziel44.github.io/nube/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<!-- ==========================================================================
+     HEADER
+     ========================================================================== -->
+<header class="site-header" id="siteHeader">
+  <div class="wrap header__inner">
+
+    <a class="brand" href="#inicio">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__text">Nube</span>
+    </a>
+
+    <nav class="nav" id="navMenu" aria-label="Principal">
+      <a class="nav__link" href="#productos">Prendas</a>
+      <a class="nav__link" href="#talles">Talles</a>
+      <a class="nav__link" href="#nosotros">Nosotros</a>
+      <a class="nav__link" href="#preguntas">Preguntas</a>
+      <!-- COMENTARIO REEMPLAZO: número de WhatsApp. Formato 54 9 + área + número, sin espacios. -->
+      <a class="btn btn--verde nav__cta" href="https://wa.me/5493512345678?text=Hola!%20Quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Hacer un pedido</a>
+    </nav>
+
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ==========================================================================
+     HERO
+     ========================================================================== -->
+<section class="hero" id="inicio">
+  <div class="wrap hero__grid">
+
+    <div class="hero__body">
+      <p class="hero__kicker">Talles 0 a 4 años</p>
+      <h1 class="hero__title">Ropa suave para<br>los que recién empiezan</h1>
+      <p class="hero__text">
+        Conjuntos de algodón pensados para gatear, dormir la siesta y ensuciarse
+        tranquilos. Sin colores de nena ni de nene: solo prendas lindas y cómodas.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--verde btn--big" href="#productos">Ver las prendas</a>
+        <a class="btn btn--linea" href="#talles">Guía de talles</a>
+      </div>
+    </div>
+
+    <div class="hero__art">
+      <!-- COMENTARIO REEMPLAZO: estas 3 fotos son las del hero. Cambialas por las que más te gusten. -->
+      <img class="hero__img hero__img--1" src="img/conjunto-muselina.jpg" alt="Conjunto de muselina verde para bebé" width="800" height="800" fetchpriority="high">
+      <img class="hero__img hero__img--2" src="img/conjunto-rosas.jpg" alt="Conjunto de frisa con estampa de rosas" width="800" height="800">
+      <img class="hero__img hero__img--3" src="img/conjunto-dino.jpg" alt="Conjunto de frisa celeste con dinosaurio" width="800" height="800">
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     FRANJA DE BENEFICIOS
+     ========================================================================== -->
+<section class="benes">
+  <div class="wrap benes__grid">
+    <div class="bene">
+      <span class="bene__icon bene__icon--verde" aria-hidden="true"></span>
+      <h3>Algodón de verdad</h3>
+      <p>Telas suaves que no pican ni irritan la piel del bebé.</p>
+    </div>
+    <div class="bene">
+      <span class="bene__icon bene__icon--cielo" aria-hidden="true"></span>
+      <h3>Envíos a todo el país</h3>
+      <p>Despachamos en 24 horas desde Córdoba.</p>
+    </div>
+    <div class="bene">
+      <span class="bene__icon bene__icon--rosa" aria-hidden="true"></span>
+      <h3>Cambios sin drama</h3>
+      <p>Si el talle no va, lo cambiamos. Sin vueltas.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     PRODUCTOS CON FILTRO
+     Para agregar una prenda nueva: copiá un bloque <article class="card">
+     entero, cambiá la foto, el nombre, el precio y el data-cat.
+     ========================================================================== -->
+<section class="productos" id="productos">
+  <div class="wrap">
+
+    <div class="section-head">
+      <h2 class="h2">Nuestras prendas</h2>
+      <p class="section-head__text">Todos los conjuntos vienen completos, remera y pantalón.</p>
+    </div>
+
+    <div class="filtros" id="filtros" role="group" aria-label="Filtrar prendas">
+      <button class="filtro is-active" type="button" data-filtro="todos">Todo</button>
+      <button class="filtro" type="button" data-filtro="abrigo">Abrigo</button>
+      <button class="filtro" type="button" data-filtro="liviano">Liviano</button>
+    </div>
+
+    <div class="cards" id="cards">
+
+      <article class="card" data-cat="abrigo">
+        <div class="card__media">
+          <img src="img/conjunto-rosas.jpg" alt="Conjunto de frisa rosa con estampa de rosas" width="800" height="800" loading="lazy">
+          <span class="card__tag">Frisa</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto Rosas</h3>
+          <p class="card__desc">Buzo de frisa estampado y jogger a tono con puños.</p>
+          <ul class="talles">
+            <li>0-3m</li><li>3-6m</li><li>6-9m</li><li>9-12m</li>
+          </ul>
+          <!-- COMENTARIO REEMPLAZO: precio -->
+          <p class="card__price">$24.900</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512345678?text=Hola!%20Quiero%20pedir%20el%20Conjunto%20Rosas.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="abrigo">
+        <div class="card__media">
+          <img src="img/conjunto-gatito.jpg" alt="Conjunto de frisa rosa con carita de gato" width="800" height="800" loading="lazy">
+          <span class="card__tag">Frisa</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto Gatito</h3>
+          <p class="card__desc">Buzo con carita bordada y jogger con cordón.</p>
+          <ul class="talles">
+            <li>3-6m</li><li>6-9m</li><li>9-12m</li><li>12-18m</li>
+          </ul>
+          <p class="card__price">$24.900</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512345678?text=Hola!%20Quiero%20pedir%20el%20Conjunto%20Gatito.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="abrigo">
+        <div class="card__media">
+          <img src="img/conjunto-dino.jpg" alt="Conjunto de frisa celeste con dinosaurio" width="800" height="800" loading="lazy">
+          <span class="card__tag">Frisa</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto Dino</h3>
+          <p class="card__desc">Buzo celeste con estampa y jogger con cordón negro.</p>
+          <ul class="talles">
+            <li>6-9m</li><li>9-12m</li><li>12-18m</li><li>2</li>
+          </ul>
+          <p class="card__price">$24.900</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512345678?text=Hola!%20Quiero%20pedir%20el%20Conjunto%20Dino.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="liviano">
+        <div class="card__media">
+          <img src="img/conjunto-waffle.jpg" alt="Musculosa waffle rosa con short floreado" width="800" height="800" loading="lazy">
+          <span class="card__tag">Algodón</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto Waffle</h3>
+          <p class="card__desc">Musculosa de waffle con volados y short floreado.</p>
+          <ul class="talles">
+            <li>0-3m</li><li>3-6m</li><li>6-9m</li>
+          </ul>
+          <p class="card__price">$18.500</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512345678?text=Hola!%20Quiero%20pedir%20el%20Conjunto%20Waffle.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="liviano">
+        <div class="card__media">
+          <img src="img/conjunto-volados.jpg" alt="Remera blanca con cuello de volados y short floreado" width="800" height="800" loading="lazy">
+          <span class="card__tag">Algodón</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto Volados</h3>
+          <p class="card__desc">Remera blanca con cuello de volados y short a juego.</p>
+          <ul class="talles">
+            <li>3-6m</li><li>6-9m</li><li>9-12m</li><li>12-18m</li>
+          </ul>
+          <p class="card__price">$19.900</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512345678?text=Hola!%20Quiero%20pedir%20el%20Conjunto%20Volados.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="liviano">
+        <div class="card__media">
+          <img src="img/conjunto-muselina.jpg" alt="Conjunto de muselina verde con botones de madera" width="800" height="800" loading="lazy">
+          <span class="card__tag">Muselina</span>
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Conjunto Muselina</h3>
+          <p class="card__desc">Camisa de muselina con botones de madera y short con cordón.</p>
+          <ul class="talles">
+            <li>12-18m</li><li>2</li><li>3</li><li>4</li>
+          </ul>
+          <p class="card__price">$21.500</p>
+          <a class="btn btn--verde btn--block" href="https://wa.me/5493512345678?text=Hola!%20Quiero%20pedir%20el%20Conjunto%20Muselina.%20%C2%BFQu%C3%A9%20talles%20hay%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="cards__vacio" id="cardsVacio" hidden>No hay prendas en esta categoría.</p>
+
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     GUÍA DE TALLES
+     Es la pregunta número uno en ropa de bebé. Tenerla acá evita
+     muchísimas consultas repetidas por WhatsApp.
+     ========================================================================== -->
+<section class="talles-guia" id="talles">
+  <div class="wrap talles-guia__grid">
+
+    <div class="talles-guia__intro">
+      <h2 class="h2">Guía de talles</h2>
+      <p>
+        Los talles van por edad, pero cada bebé crece a su ritmo. Si estás entre
+        dos, siempre conviene llevar el más grande.
+      </p>
+      <!-- COMENTARIO REEMPLAZO: verificá estas medidas con tu proveedor real -->
+      <p class="talles-guia__nota">
+        Medidas de referencia. Ante la duda, escribinos y te ayudamos a elegir.
+      </p>
+    </div>
+
+    <div class="tabla-wrap">
+      <table class="tabla">
+        <caption class="visually-hidden">Equivalencia entre talle, edad, altura y peso</caption>
+        <thead>
+          <tr><th scope="col">Talle</th><th scope="col">Edad</th><th scope="col">Altura</th><th scope="col">Peso</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">0-3m</th><td>Recién nacido</td><td>50 - 60 cm</td><td>3 - 6 kg</td></tr>
+          <tr><th scope="row">3-6m</th><td>3 a 6 meses</td><td>60 - 67 cm</td><td>6 - 8 kg</td></tr>
+          <tr><th scope="row">6-9m</th><td>6 a 9 meses</td><td>67 - 72 cm</td><td>8 - 9 kg</td></tr>
+          <tr><th scope="row">9-12m</th><td>9 a 12 meses</td><td>72 - 78 cm</td><td>9 - 10 kg</td></tr>
+          <tr><th scope="row">12-18m</th><td>1 a 1 año y medio</td><td>78 - 84 cm</td><td>10 - 11 kg</td></tr>
+          <tr><th scope="row">2</th><td>2 años</td><td>84 - 92 cm</td><td>11 - 13 kg</td></tr>
+          <tr><th scope="row">3</th><td>3 años</td><td>92 - 100 cm</td><td>13 - 15 kg</td></tr>
+          <tr><th scope="row">4</th><td>4 años</td><td>100 - 108 cm</td><td>15 - 17 kg</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     NOSOTROS
+     ========================================================================== -->
+<section class="nosotros" id="nosotros">
+  <div class="wrap nosotros__grid">
+
+    <figure class="nosotros__photo">
+      <!-- COMENTARIO REEMPLAZO: foto del local, del taller o de quien atiende -->
+      <img src="img/nosotros.jpg" alt="Prendas dobladas listas para enviar" width="800" height="900" loading="lazy">
+    </figure>
+
+    <div class="nosotros__body">
+      <h2 class="h2">Ropa que no clasifica</h2>
+      <p class="lead">
+        Elegimos las prendas de a una, mirando la tela antes que la estampa.
+        Nos importa que abriguen bien, que aguanten el lavarropas y que se
+        sientan suaves después de veinte lavados.
+      </p>
+      <p>
+        Y no separamos por nena y nene. Un dinosaurio le queda bien a cualquiera,
+        igual que el verde, el rosa o el celeste. Vos elegís lo que te gusta y
+        listo.
+      </p>
+
+      <ul class="ticks">
+        <li>Prendas elegidas de a una, no por catálogo</li>
+        <li>Talles de 0 a 4 años</li>
+        <li>Atendemos por WhatsApp todos los días</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     PREGUNTAS FRECUENTES
+     ========================================================================== -->
+<section class="info" id="preguntas">
+  <div class="wrap info__grid">
+
+    <div class="info__intro">
+      <h2 class="h2">Preguntas frecuentes</h2>
+      <p>Lo que más nos consultan antes de comprar.</p>
+    </div>
+
+    <div class="accordion" id="accordion">
+
+      <div class="acc">
+        <button class="acc__head" type="button" aria-expanded="true" data-acc="a1">
+          <span>Cómo compro</span>
+          <span class="acc__icon" aria-hidden="true"></span>
+        </button>
+        <div class="acc__panel" id="a1">
+          <div class="acc__inner">
+            <p>Tocás el botón de la prenda que te gusta y se abre WhatsApp con el nombre ya escrito. Ahí coordinamos talle, pago y envío.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <button class="acc__head" type="button" aria-expanded="false" data-acc="a2">
+          <span>Formas de pago</span>
+          <span class="acc__icon" aria-hidden="true"></span>
+        </button>
+        <div class="acc__panel" id="a2">
+          <div class="acc__inner">
+            <!-- COMENTARIO REEMPLAZO: confirmá qué medios de pago aceptás -->
+            <p>Transferencia, efectivo y Mercado Pago. Si querés en cuotas, consultanos.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <button class="acc__head" type="button" aria-expanded="false" data-acc="a3">
+          <span>Envíos y demoras</span>
+          <span class="acc__icon" aria-hidden="true"></span>
+        </button>
+        <div class="acc__panel" id="a3">
+          <div class="acc__inner">
+            <!-- COMENTARIO REEMPLAZO: completá transportista, costo y plazos reales -->
+            <p>Despachamos dentro de las 24 horas de confirmado el pago. El costo depende del destino y se coordina por WhatsApp.</p>
+            <p>En Córdoba capital también podés retirar sin cargo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <button class="acc__head" type="button" aria-expanded="false" data-acc="a4">
+          <span>Cambios y devoluciones</span>
+          <span class="acc__icon" aria-hidden="true"></span>
+        </button>
+        <div class="acc__panel" id="a4">
+          <div class="acc__inner">
+            <!-- COMENTARIO REEMPLAZO: confirmá el plazo real de cambio -->
+            <p>Tenés 30 días para cambiar el talle, siempre que la prenda esté sin uso y con su etiqueta.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <button class="acc__head" type="button" aria-expanded="false" data-acc="a5">
+          <span>Cómo se lavan</span>
+          <span class="acc__icon" aria-hidden="true"></span>
+        </button>
+        <div class="acc__panel" id="a5">
+          <div class="acc__inner">
+            <p>Lavarropas con agua fría, programa suave y del revés. Sin secarropas: se deforman menos si se secan colgadas a la sombra.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     BLOQUE DE RESEÑAS · DESACTIVADO A PROPÓSITO
+
+     COMENTARIO REEMPLAZO: cuando tengas 3 reseñas REALES de clientas,
+     descomentá este bloque y completalo. No inventes testimonios: si alguien
+     los revisa y no existen, perdés la venta.
+
+     <section class="resenas">
+       <div class="wrap">
+         <h2 class="h2 resenas__title">Lo que nos cuentan</h2>
+         <div class="resenas__grid">
+           <blockquote class="resena">
+             <p>Texto real de la reseña.</p>
+             <cite>Nombre, Ciudad</cite>
+           </blockquote>
+           <blockquote class="resena">
+             <p>Texto real de la reseña.</p>
+             <cite>Nombre, Ciudad</cite>
+           </blockquote>
+           <blockquote class="resena">
+             <p>Texto real de la reseña.</p>
+             <cite>Nombre, Ciudad</cite>
+           </blockquote>
+         </div>
+       </div>
+     </section>
+     ========================================================================== -->
+
+
+<!-- ==========================================================================
+     CTA FINAL
+     ========================================================================== -->
+<section class="cta" id="pedido">
+  <div class="wrap cta__inner">
+    <h2 class="cta__title">¿No sabés qué talle pedir?</h2>
+    <p class="cta__text">
+      Contanos la edad y el peso del bebé y te decimos cuál le va a quedar bien.
+    </p>
+    <a class="btn btn--claro btn--big" href="https://wa.me/5493512345678?text=Hola!%20Necesito%20ayuda%20para%20elegir%20el%20talle" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
+  </div>
+</section>
+
+</main>
+
+
+<!-- ==========================================================================
+     FOOTER
+     ========================================================================== -->
+<footer class="site-footer">
+  <div class="wrap footer__grid">
+
+    <div class="footer__brand">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <p class="footer__name">Nube</p>
+      <p class="footer__blurb">Ropa de algodón para bebés y niños de 0 a 4 años. Córdoba, Argentina.</p>
+    </div>
+
+    <nav class="footer__col" aria-label="Pie de página">
+      <h3 class="footer__head">Tienda</h3>
+      <a href="#productos">Prendas</a>
+      <a href="#talles">Guía de talles</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+
+    <div class="footer__col">
+      <h3 class="footer__head">Contacto</h3>
+      <!-- COMENTARIO REEMPLAZO: WhatsApp e Instagram definitivos -->
+      <a href="https://wa.me/5493512345678" target="_blank" rel="noopener">WhatsApp +54 9 351 234-5678</a>
+      <a href="https://www.instagram.com/nube.bebes" target="_blank" rel="noopener">@nube.bebes</a>
+      <p class="footer__plain">Córdoba, Argentina<br>Envíos a todo el país</p>
+    </div>
+
+    <div class="footer__col">
+      <h3 class="footer__head">Cómo comprar</h3>
+      <p class="footer__plain">
+        Elegís la prenda, nos escribís por WhatsApp y coordinamos talle, pago y envío.
+        Aceptamos transferencia, efectivo y Mercado Pago.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="wrap footer__base">
+    <p>&copy; <span id="year">2026</span> Nube</p>
+    <p>Sitio por Plexiweb Development</p>
+  </div>
+</footer>
+
+
+<!-- Botón flotante de WhatsApp -->
+<a class="wa" href="https://wa.me/5493512345678?text=Hola!%20Quiero%20hacer%20un%20pedido" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script src="index.js" defer></script>
+</body>
+</html>

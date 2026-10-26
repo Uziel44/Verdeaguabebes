@@ -1,0 +1,774 @@
+/* ==========================================================================
+   NUBE · ROPA DE BEBÉ Y NIÑOS
+   Hoja de estilos única.
+
+   ORGANIZACIÓN DEL ARCHIVO
+   1.  Variables (paleta pastel)
+   2.  Reset y base
+   3.  Utilidades y componentes compartidos
+   4.  Header y navegación
+   5.  Hero
+   6.  Franja de beneficios
+   7.  Productos y filtros
+   8.  Guía de talles
+   9.  Nosotros
+   10. Preguntas frecuentes / acordeón
+   11. Reseñas (listo para cuando las tengas)
+   12. CTA final
+   13. Footer y botón flotante
+   14. Responsive
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. VARIABLES
+   COMENTARIO REEMPLAZO: acá cambiás TODOS los colores de la web de una vez.
+
+   La paleta usa los tres pasteles en igual peso a propósito: verde, celeste
+   y rosa conviven, ninguno "manda". Es lo que hace que la tienda no se lea
+   como de nena ni de nene.
+   ========================================================================== */
+:root {
+  /* Los tres pasteles */
+  --menta:   #C9E8D5;
+  --cielo:   #CBE5F0;
+  --rosa:    #F6D5DC;
+
+  /* Versiones fuertes, para texto y botones sobre claro */
+  --verde:   #3F9E7E;   /* color principal de acción */
+  --verde-2: #2F7C62;   /* hover */
+  --azul:    #4A92B5;
+  --frutilla:#D4788C;
+
+  /* Neutros */
+  --crema:   #FFFCF8;   /* fondo base */
+  --arena:   #F6F1EA;   /* fondo de secciones alternas */
+  --tinta:   #33383D;   /* texto principal */
+  --gris:    #6B7278;   /* texto secundario */
+  --linea:   #E6E0D8;
+
+  --wrap: 1200px;
+  --pad: 24px;
+  --radius: 16px;
+  --radius-lg: 28px;
+
+  --display: "Fraunces", Georgia, serif;
+  --body: "Nunito", system-ui, -apple-system, sans-serif;
+}
+
+
+/* ==========================================================================
+   2. RESET Y BASE
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--tinta);
+  background: var(--crema);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* height:auto es imprescindible: las imágenes llevan width y height en el
+   HTML (para que la página no salte al cargar), y sin esta línea esa altura
+   fija le gana al aspect-ratio y las fotos salen deformadas. */
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; }
+
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0;
+}
+
+p { margin: 0 0 1em; }
+
+ul { margin: 0; padding: 0; list-style: none; }
+
+button { font-family: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--verde);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px; top: 0;
+  background: var(--verde);
+  color: #fff;
+  padding: 12px 18px;
+  z-index: 200;
+}
+.skip-link:focus { left: 0; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+
+/* ==========================================================================
+   3. UTILIDADES Y COMPONENTES COMPARTIDOS
+   ========================================================================== */
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+/* Evita que una imagen agrande su columna y descuadre la grilla */
+.hero__grid > *,
+.nosotros__grid > *,
+.info__grid > *,
+.talles-guia__grid > *,
+.footer__grid > * { min-width: 0; }
+
+.h2 {
+  font-size: clamp(1.9rem, 4.4vw, 2.8rem);
+  color: var(--tinta);
+  margin-bottom: .5em;
+}
+
+.lead { font-size: 1.08rem; }
+
+.section-head { max-width: 560px; margin: 0 auto 36px; text-align: center; }
+.section-head__text { color: var(--gris); margin: 0; }
+
+/* --- Botones --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: .97rem;
+  padding: 13px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform .18s ease, background-color .18s ease, color .18s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+
+.btn--verde { background: var(--verde); color: #fff; }
+.btn--verde:hover { background: var(--verde-2); }
+
+.btn--linea { background: transparent; color: var(--tinta); border-color: var(--linea); }
+.btn--linea:hover { background: #fff; border-color: var(--verde); color: var(--verde); }
+
+.btn--claro { background: #fff; color: var(--verde); }
+.btn--claro:hover { background: var(--menta); color: var(--verde-2); }
+
+.btn--big { padding: 16px 34px; font-size: 1.02rem; }
+.btn--block { width: 100%; }
+
+/* --- Lista con tilde --- */
+.ticks li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  color: var(--gris);
+}
+.ticks li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 9px;
+  width: 8px; height: 14px;
+  border: solid var(--verde);
+  border-width: 0 3px 3px 0;
+  transform: rotate(42deg);
+}
+
+
+/* ==========================================================================
+   4. HEADER Y NAVEGACIÓN
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(255,252,248,.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+.site-header.is-stuck {
+  border-bottom-color: var(--linea);
+  box-shadow: 0 4px 20px rgba(51,56,61,.06);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand__mark {
+  width: 26px; height: 26px;
+  flex: none;
+  border-radius: 50% 50% 50% 8px;
+  background: linear-gradient(140deg, var(--menta) 0%, var(--cielo) 50%, var(--rosa) 100%);
+}
+.brand__text {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--tinta);
+}
+
+.nav { display: flex; align-items: center; gap: 26px; }
+.nav__link {
+  color: var(--tinta);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .95rem;
+}
+.nav__link:hover { color: var(--verde); }
+.nav__cta { padding: 10px 20px; font-size: .9rem; }
+
+.burger {
+  display: none;
+  width: 46px; height: 46px;
+  background: none;
+  border: 1px solid var(--linea);
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 0;
+}
+.burger span {
+  display: block;
+  width: 20px; height: 2px;
+  margin: 4px auto;
+  background: var(--tinta);
+  transition: transform .25s ease, opacity .25s ease;
+}
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+
+/* ==========================================================================
+   5. HERO
+   El fondo usa los tres pasteles en un degradado suave: es la firma visual
+   de la marca y la razón por la que la tienda no se lee de un solo género.
+   ========================================================================== */
+.hero {
+  padding: 150px 0 90px;
+  background:
+    radial-gradient(circle at 12% 18%, var(--menta) 0%, transparent 46%),
+    radial-gradient(circle at 88% 12%, var(--cielo) 0%, transparent 48%),
+    radial-gradient(circle at 72% 92%, var(--rosa) 0%, transparent 50%),
+    var(--crema);
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.hero__kicker {
+  display: inline-block;
+  background: #fff;
+  color: var(--verde);
+  font-weight: 700;
+  font-size: .85rem;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+.hero__title {
+  font-size: clamp(2.3rem, 5.4vw, 3.7rem);
+  margin-bottom: 20px;
+}
+
+.hero__text {
+  color: var(--gris);
+  font-size: 1.08rem;
+  max-width: 46ch;
+  margin-bottom: 30px;
+}
+
+.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* Composición de tres fotos superpuestas */
+.hero__art {
+  position: relative;
+  aspect-ratio: 1 / 1;
+}
+.hero__img {
+  position: absolute;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  box-shadow: 0 14px 40px rgba(51,56,61,.14);
+  background: #fff;
+}
+.hero__img--1 { width: 58%; aspect-ratio: 1/1; top: 0; left: 4%; z-index: 2; }
+.hero__img--2 { width: 44%; aspect-ratio: 1/1; top: 26%; right: 0; z-index: 3; }
+.hero__img--3 { width: 46%; aspect-ratio: 1/1; bottom: 0; left: 16%; z-index: 1; }
+
+/* Una sola entrada orquestada al cargar la página */
+.hero__kicker, .hero__title, .hero__text, .hero__actions, .hero__img {
+  animation: rise .9s cubic-bezier(.22,.7,.3,1) both;
+}
+.hero__kicker  { animation-delay: .05s; }
+.hero__title   { animation-delay: .13s; }
+.hero__text    { animation-delay: .22s; }
+.hero__actions { animation-delay: .31s; }
+.hero__img--1  { animation-delay: .20s; }
+.hero__img--2  { animation-delay: .30s; }
+.hero__img--3  { animation-delay: .40s; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ==========================================================================
+   6. FRANJA DE BENEFICIOS
+   ========================================================================== */
+.benes { padding: 60px 0; background: var(--crema); }
+
+.benes__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.bene {
+  text-align: center;
+  padding: 30px 24px;
+  background: #fff;
+  border: 1px solid var(--linea);
+  border-radius: var(--radius-lg);
+}
+.bene h3 { font-size: 1.15rem; margin-bottom: 6px; }
+.bene p { color: var(--gris); font-size: .95rem; margin: 0; }
+
+.bene__icon {
+  display: block;
+  width: 44px; height: 44px;
+  margin: 0 auto 16px;
+  border-radius: 50% 50% 50% 10px;
+}
+.bene__icon--verde { background: var(--menta); }
+.bene__icon--cielo { background: var(--cielo); }
+.bene__icon--rosa  { background: var(--rosa); }
+
+
+/* ==========================================================================
+   7. PRODUCTOS Y FILTROS
+   ========================================================================== */
+.productos { padding: 80px 0 100px; background: var(--arena); }
+
+.filtros {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.filtro {
+  background: #fff;
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+  padding: 9px 22px;
+  font-weight: 700;
+  font-size: .92rem;
+  color: var(--gris);
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.filtro:hover { border-color: var(--verde); color: var(--verde); }
+.filtro.is-active { background: var(--verde); border-color: var(--verde); color: #fff; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+/* Se aplica desde el JS cuando una prenda no entra en el filtro elegido */
+.card.is-hidden { display: none; }
+
+.card {
+  background: #fff;
+  border: 1px solid var(--linea);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 34px rgba(51,56,61,.10);
+}
+
+.card__media { position: relative; overflow: hidden; }
+.card__media img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: var(--arena);
+  transition: transform .6s cubic-bezier(.22,.7,.3,1);
+}
+.card:hover .card__media img { transform: scale(1.05); }
+
+.card__tag {
+  position: absolute;
+  top: 14px; left: 14px;
+  background: rgba(255,255,255,.94);
+  color: var(--tinta);
+  font-size: .76rem;
+  font-weight: 700;
+  padding: 5px 13px;
+  border-radius: 999px;
+}
+
+.card__body {
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card__name { font-size: 1.3rem; margin-bottom: 6px; }
+.card__desc { color: var(--gris); font-size: .93rem; margin-bottom: 14px; }
+
+/* Los talles reemplazan a las estrellas de valoración de la plantilla
+   original: son un dato real y útil, no una puntuación inventada. */
+.talles { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.talles li {
+  background: var(--menta);
+  color: var(--verde-2);
+  font-size: .76rem;
+  font-weight: 700;
+  padding: 4px 11px;
+  border-radius: 8px;
+}
+
+.card__price {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.45rem;
+  color: var(--tinta);
+  margin: 0 0 16px;
+}
+
+.card .btn { margin-top: auto; }
+
+.cards__vacio {
+  text-align: center;
+  color: var(--gris);
+  padding: 40px 0 0;
+}
+
+
+/* ==========================================================================
+   8. GUÍA DE TALLES
+   ========================================================================== */
+.talles-guia { padding: 90px 0; background: var(--crema); }
+
+.talles-guia__grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 50px;
+  align-items: start;
+}
+.talles-guia__intro p { color: var(--gris); }
+.talles-guia__nota {
+  font-size: .9rem;
+  padding: 14px 18px;
+  background: var(--cielo);
+  border-radius: var(--radius);
+  color: var(--tinta);
+}
+
+/* El contenedor permite deslizar la tabla en celular sin romper el layout */
+.tabla-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--linea); }
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  min-width: 460px;
+}
+.tabla th, .tabla td {
+  padding: 13px 18px;
+  text-align: left;
+  font-size: .94rem;
+  border-bottom: 1px solid var(--linea);
+}
+.tabla thead th {
+  background: var(--menta);
+  color: var(--verde-2);
+  font-weight: 700;
+  font-size: .84rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.tabla tbody th { font-weight: 700; color: var(--tinta); }
+.tabla tbody td { color: var(--gris); }
+.tabla tbody tr:last-child th,
+.tabla tbody tr:last-child td { border-bottom: none; }
+.tabla tbody tr:hover { background: var(--arena); }
+
+
+/* ==========================================================================
+   9. NOSOTROS
+   ========================================================================== */
+.nosotros { padding: 90px 0; background: var(--arena); }
+
+.nosotros__grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.nosotros__photo { margin: 0; }
+.nosotros__photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  background: var(--menta);
+}
+
+.nosotros__body p { color: var(--gris); }
+.nosotros__body .lead { color: var(--tinta); }
+.nosotros__body .ticks { margin-top: 22px; }
+
+
+/* ==========================================================================
+   10. PREGUNTAS FRECUENTES / ACORDEÓN
+   ========================================================================== */
+.info { padding: 90px 0; background: var(--crema); }
+
+.info__grid {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 52px;
+  align-items: start;
+}
+.info__intro p { color: var(--gris); }
+
+.accordion { border-top: 1px solid var(--linea); }
+.acc { border-bottom: 1px solid var(--linea); }
+
+.acc__head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.12rem;
+  color: var(--tinta);
+  text-align: left;
+}
+.acc__head:hover { color: var(--verde); }
+
+.acc__icon { position: relative; width: 18px; height: 18px; flex: none; }
+.acc__icon::before,
+.acc__icon::after {
+  content: "";
+  position: absolute;
+  background: var(--verde);
+  transition: transform .3s ease, opacity .3s ease;
+}
+.acc__icon::before { top: 8px; left: 0; width: 18px; height: 2px; }
+.acc__icon::after  { top: 0; left: 8px; width: 2px; height: 18px; }
+.acc__head[aria-expanded="true"] .acc__icon::after { transform: rotate(90deg); opacity: 0; }
+
+.acc__panel { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+.acc__inner { padding: 0 0 22px; color: var(--gris); }
+.acc__inner p:last-child { margin-bottom: 0; }
+
+
+/* ==========================================================================
+   11. RESEÑAS
+   Estilos listos para cuando descomentes el bloque en el HTML.
+   ========================================================================== */
+.resenas { padding: 90px 0; background: var(--arena); }
+.resenas__title { text-align: center; margin-bottom: 40px; }
+.resenas__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.resena {
+  margin: 0;
+  padding: 30px;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  border-top: 4px solid var(--rosa);
+}
+.resena p { color: var(--tinta); }
+.resena cite { font-style: normal; font-weight: 700; color: var(--verde); font-size: .92rem; }
+
+
+/* ==========================================================================
+   12. CTA FINAL
+   ========================================================================== */
+.cta { background: var(--verde); color: #fff; padding: 84px 0; }
+.cta__inner { text-align: center; }
+.cta__title { font-size: clamp(1.9rem, 4.6vw, 2.8rem); margin-bottom: 14px; }
+.cta__text {
+  color: rgba(255,255,255,.92);
+  max-width: 46ch;
+  margin: 0 auto 30px;
+}
+
+
+/* ==========================================================================
+   13. FOOTER Y BOTÓN FLOTANTE
+   ========================================================================== */
+.site-footer { background: #2B3035; color: #C9CDD1; padding: 68px 0 26px; }
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.2fr 1.2fr;
+  gap: 38px;
+}
+
+.footer__name {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 12px 0 8px;
+}
+.footer__blurb { color: #9BA1A7; max-width: 28ch; font-size: .94rem; }
+
+.footer__col { display: flex; flex-direction: column; gap: 9px; }
+.footer__head {
+  font-size: .78rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--menta);
+  margin-bottom: 4px;
+  font-family: var(--body);
+  font-weight: 700;
+}
+.footer__col a { color: #C9CDD1; text-decoration: none; font-size: .94rem; }
+.footer__col a:hover { color: #fff; }
+.footer__plain { color: #9BA1A7; font-size: .92rem; margin: 4px 0 0; }
+
+.footer__base {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 48px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  color: #8A9096;
+  font-size: .86rem;
+}
+.footer__base p { margin: 0; }
+
+.wa {
+  position: fixed;
+  right: 22px; bottom: 22px;
+  z-index: 90;
+  width: 58px; height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  box-shadow: 0 8px 22px rgba(0,0,0,.22);
+  transition: transform .2s ease;
+}
+.wa:hover { transform: scale(1.08); }
+
+
+/* ==========================================================================
+   14. RESPONSIVE
+   ========================================================================== */
+@media (max-width: 980px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 860px) {
+
+  .burger { display: block; }
+
+  .nav {
+    position: fixed;
+    top: 76px; left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--crema);
+    padding: 0 var(--pad);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease, padding .3s ease;
+    border-bottom: 1px solid transparent;
+  }
+  .nav.is-open {
+    max-height: 360px;
+    padding: 8px var(--pad) 22px;
+    border-bottom-color: var(--linea);
+  }
+
+  .nav__link { padding: 14px 0; border-bottom: 1px solid var(--linea); }
+  .nav__cta { margin-top: 16px; text-align: center; }
+
+  .hero { padding: 128px 0 70px; }
+  .hero__grid,
+  .nosotros__grid,
+  .info__grid,
+  .talles-guia__grid { grid-template-columns: 1fr; gap: 40px; }
+
+  /* En celular la composición de fotos va abajo del texto */
+  .hero__art { order: 2; max-width: 420px; margin: 0 auto; width: 100%; }
+
+  .benes__grid { grid-template-columns: 1fr; }
+  .resenas__grid { grid-template-columns: 1fr; }
+
+  .productos, .talles-guia, .nosotros, .info { padding: 68px 0; }
+}
+
+@media (max-width: 560px) {
+  .cards { grid-template-columns: 1fr; }
+  .footer__grid { grid-template-columns: 1fr; gap: 30px; }
+  .hero__actions .btn { width: 100%; }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
