@@ -403,6 +403,29 @@ button { font-family: inherit; }
 .filtro:hover { border-color: var(--verde); color: var(--verde); }
 .filtro.is-active { background: var(--verde); border-color: var(--verde); color: #fff; }
 
+/* Botón "Conjuntos personajes": contorno rojo y un castillito rojo.
+   Va por el atributo data-filtro (no por el HTML) porque la zona de filtros
+   la regenera el script de sincronización con Plexi. */
+.filtro[data-filtro="conjuntos-personajes"] {
+  --rojo: #D62839;
+  border-color: var(--rojo);
+  color: var(--rojo);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.filtro[data-filtro="conjuntos-personajes"]::before {
+  content: "";
+  width: 1.15em; height: 1.15em;
+  background: var(--rojo);
+  -webkit-mask: var(--castillo) center / contain no-repeat;
+          mask: var(--castillo) center / contain no-repeat;
+  --castillo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 21V11h2V8l1-2 1 2v3h2V6l1-3 1 3v5h2V6l1-3 1 3v5h2V8l1-2 1 2v3h2v10h-5v-4a2 2 0 0 0-4 0v4z'/%3E%3C/svg%3E");
+}
+.filtro[data-filtro="conjuntos-personajes"]:hover { border-color: var(--rojo); color: var(--rojo); background: #fff; }
+.filtro[data-filtro="conjuntos-personajes"].is-active { background: var(--rojo); border-color: var(--rojo); color: #fff; }
+.filtro[data-filtro="conjuntos-personajes"].is-active::before { background: #fff; }
+
 .cards {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
