@@ -127,6 +127,12 @@
         aplicarFiltro(boton.dataset.filtro);
       });
     });
+
+    // Al entrar se muestra "Conjuntos personajes". Se resuelve acá (no en el
+    // HTML) porque los filtros los regenera el script de sincronización.
+    // Si ese filtro no existe, queda "Todo".
+    const inicial = filtros.querySelector('[data-filtro="conjuntos-personajes"]');
+    if (inicial) inicial.click();
   }
 
 
