@@ -221,6 +221,13 @@
     const dTalles = detalle.querySelector(".detail__talles");
     const dPrice = detalle.querySelector(".detail__price");
     const dOrder = detalle.querySelector(".detail__order");
+    let tarjetaAbierta = null;
+
+    // "Agregar al carrito" dentro del detalle: suma la prenda y cierra la ventana
+    dOrder.addEventListener("click", function () {
+      if (tarjetaAbierta && window.Carrito) window.Carrito.agregarDesdeCard(tarjetaAbierta);
+      detalle.close();
+    });
 
     // Las tarjetas las genera el script de sincronización, sin botón de zoom:
     // la foto se vuelve "botón" desde acá para que también funcione con teclado.
@@ -236,12 +243,12 @@
 
     contenedorCards.addEventListener("click", function (e) {
       const card = e.target.closest(".card");
-      if (!card || e.target.closest("a")) return;
+      if (!card || e.target.closest(".btn")) return;
 
       const img = card.querySelector(".card__media img");
       const tag = card.querySelector(".card__tag");
       const talles = card.querySelector(".talles");
-      const pedir = card.querySelector(".btn");
+      tarjetaAbierta = card;
 
       dImg.src = img.currentSrc || img.src;
       dImg.alt = img.alt;
@@ -252,7 +259,6 @@
       dTalles.innerHTML = talles ? talles.innerHTML : "";
       dTalles.hidden = !talles;
       dPrice.textContent = card.querySelector(".card__price").textContent;
-      dOrder.href = pedir.href;
 
       document.body.classList.add("modal-open");
       detalle.showModal();
