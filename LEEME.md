@@ -80,6 +80,15 @@ Cada prenda nueva necesita `data-wa-product="Nombre"` y `data-price="$24.900"` e
 Al tocar la foto de una prenda se abre una ventana de detalle con foto grande,
 descripción, talles y precio: lee todo de la tarjeta, no hay que cargar nada más.
 
+## Carrito
+
+`carrito.js` (se carga antes de `index.js`) agrega el carrito, con la lógica adaptada de plexipedidos:
+cada tarjeta pasa de "Pedir por WhatsApp" a "Agregar al carrito", con cantidad, observación por prenda
+(talle), total y datos del cliente (nombre, teléfono, entrega, pago). "Enviar pedido" abre WhatsApp con el
+pedido armado. El carrito se guarda en el navegador. Toma nombre, precio y foto de la propia tarjeta, así que
+sigue andando cuando se re-sincronizan los productos. El número de WhatsApp está también en `WHATSAPP` de
+`carrito.js` (junto al de `index.js`).
+
 ## Antes de publicar
 
 1. **Nombre de la marca.** El nombre es "Verdeagua Bebés". Si cambia, buscá con `Ctrl+H`

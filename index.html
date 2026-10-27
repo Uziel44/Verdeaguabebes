@@ -59,6 +59,11 @@
       <a class="btn btn--verde nav__cta" href="#" data-wa="Hola! Quiero hacer un pedido" target="_blank" rel="noopener">Hacer un pedido</a>
     </nav>
 
+    <button class="cart-btn" id="cartOpen" type="button" aria-label="Abrir carrito" aria-haspopup="dialog">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2.5l2.2 10.2a1 1 0 0 0 1 .8h8.6a1 1 0 0 0 1-.8L20 8H6.2"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg>
+      <span class="cart-btn__count" data-cart-count hidden>0</span>
+    </button>
+
     <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
       <span></span><span></span><span></span>
     </button>
@@ -88,10 +93,10 @@
     </div>
 
     <div class="hero__art">
-      <!-- COMENTARIO REEMPLAZO: Winnie Pooh beige y Tigger. Cambialas por las que más te gusten. -->
+      <!-- COMENTARIO REEMPLAZO: Winnie Pooh beige, Tigger y Mickey. Cambialas por las que más te gusten. -->
       <img class="hero__img hero__img--1" src="img/whinnie-pooh-beige.jpg" alt="Conjunto de Winnie Pooh beige para bebé" width="611" height="640" fetchpriority="high">
       <img class="hero__img hero__img--2" src="img/tigger.jpg" alt="Conjunto de Tigger para bebé" width="480" height="640">
-      <img class="hero__img hero__img--3" src="img/tigger.jpg" alt="Conjunto de Tigger para bebé" width="480" height="640">
+      <img class="hero__img hero__img--3" src="img/mickey.jpg" alt="Conjunto de Mickey Mouse para bebé" width="414" height="640">
     </div>
 
   </div>
@@ -1419,7 +1424,7 @@
     <p class="detail__desc"></p>
     <ul class="talles detail__talles"></ul>
     <p class="detail__price"></p>
-    <a class="btn btn--verde btn--block detail__order" href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    <button class="btn btn--verde btn--block detail__order" type="button">Agregar al carrito</button>
   </div>
 </dialog>
 
@@ -1438,6 +1443,24 @@
 }
 </script>
 
+<!-- Carrito: cajón lateral. Lo dibuja carrito.js -->
+<dialog class="cart" id="cart" aria-labelledby="cart-title">
+  <div class="cart__head">
+    <h2 class="cart__title" id="cart-title">Tu carrito</h2>
+    <button class="detail__close cart__close" id="cartClose" type="button" aria-label="Cerrar carrito">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <div class="cart__body" id="cartBody"></div>
+  <div class="cart__foot" id="cartFoot" hidden>
+    <div class="cart__total"><span>Total</span><strong id="cartTotal">$0</strong></div>
+    <button class="btn btn--verde btn--block btn--big" id="cartSend" type="button">Enviar pedido por WhatsApp</button>
+    <p class="cart__note">Te abre WhatsApp con el pedido armado. El envío y el pago se coordinan por ahí.</p>
+  </div>
+</dialog>
+<div class="cart-toast" id="cartToast" role="status" aria-live="polite"></div>
+
+<script src="carrito.js" defer></script>
 <script src="index.js" defer></script>
 </body>
 </html>
