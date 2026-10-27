@@ -405,9 +405,20 @@ button { font-family: inherit; }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
 }
+
+/* Con 5 columnas las tarjetas son angostas: la sección usa un ancho mayor
+   y la tarjeta, textos y relleno más compactos */
+.productos .wrap { max-width: 1400px; }
+.cards .card { border-radius: var(--radius); }
+.cards .card__body { padding: 14px 14px 16px; }
+.cards .card__name { font-size: 1.02rem; }
+.cards .card__desc { font-size: .82rem; margin-bottom: 10px; }
+.cards .card__price { font-size: 1.15rem; margin-bottom: 12px; }
+.cards .card__tag { top: 10px; left: 10px; font-size: .68rem; padding: 4px 10px; }
+.cards .card .btn { padding: 10px 12px; font-size: .85rem; }
 
 /* Se aplica desde el JS cuando una prenda no entra en el filtro elegido */
 .card.is-hidden { display: none; }
@@ -725,8 +736,12 @@ button { font-family: inherit; }
 /* ==========================================================================
    14. RESPONSIVE
    ========================================================================== */
+@media (max-width: 1180px) {
+  .cards { grid-template-columns: repeat(4, 1fr); }
+}
+
 @media (max-width: 980px) {
-  .cards { grid-template-columns: repeat(2, 1fr); }
+  .cards { grid-template-columns: repeat(3, 1fr); }
   .footer__grid { grid-template-columns: 1fr 1fr; }
 }
 
@@ -773,7 +788,7 @@ button { font-family: inherit; }
 }
 
 @media (max-width: 560px) {
-  .cards { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .footer__grid { grid-template-columns: 1fr; gap: 30px; }
   .hero__actions .btn { width: 100%; }
 }
